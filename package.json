@@ -1,0 +1,28 @@
+{
+  "name": "doyo",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "./src/html/main.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dukza/doyo.git"
+  },
+  "author": "doyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dukza/doyo/issues"
+  },
+  "homepage": "https://dukza.github.io/doyo",
+  "dependencies": {
+    "@webpack-cli/init": "^0.3.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^3.1.1"
+  }
+}

@@ -1,0 +1,1415 @@
+@import 'short.scss';
+@import url(all.css);
+@import url(./../icomoon-hp/style.css);
+@import url(bootstrap.min.css);
+@import url('./SpoqaHanSans-kr.css');
+@import url('./../webfonts/samsung/style.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+html{
+	font-size: 14px;
+}
+body{
+	font-family: 'Spoqa Han Sans', 'Sans-serif';
+	font-weight: $font-weight-lighter;
+	color: $color-body !important;
+	line-height: 1.5;
+	transition: all 2s;
+	background-color: transparent;
+}
+
+.bg-change{
+	body{
+		background-color: $color-mark !important;
+	}
+}
+[lang="en"]{
+	font-family: 'Samsung Sharp Sans Regular Regular';
+}
+[lang="en"].bold{
+	font-family: 'SamsungSharpSans-Bold';
+}
+// [lang="en"].bold{
+// 	font-family: 'Samsung Sans Bold';
+// }
+// [lang="en"].thin{
+// 	font-family: 'Samsung Sans Thin';
+// }
+// [lang="en"].light{
+// 	font-family: 'Samsung Sans Light';
+// }
+// [lang="en"].medium{
+// 	font-family: 'Samsung Sans Medium';
+// }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	margin-bottom: inherit;
+	font-weight: $font-weight-lighter;
+	line-height: 1.5;
+}
+.letter{
+	&-spacing-1{
+		letter-spacing: -1px;;
+	}
+	&-spacing-2{
+		letter-spacing: -2px;;
+	}
+
+}
+.line-height{
+	&-1{
+		line-height: 1;
+	}
+	&-13{
+		line-height: 1.3;
+	}	
+	&-15{
+		line-height: 1.5;
+	}	
+	&-175{
+		line-height: 1.75;
+	}
+}
+
+.font{
+	&--4{
+		font-size: 2rem;
+		transition: all .4s;
+	}
+	&--3{
+		font-size: 1.5rem;
+	}
+	&-emoji{
+		font-family: Segoe UI Emoji;
+	}
+
+	&-14{
+		font-size: 14px;
+	}
+	&-12{
+		font-size: 12px !important;
+	}
+	&-11{
+		font-size: 11px !important;
+		font-weight: bolder;
+	}
+	&-small{
+		font-size: 0.87rem !important;
+	}
+	&-xs{
+		font-size: 0.69rem !important;
+	}
+	&-figma{
+		font-family: 'Inter', sans-serif;;
+	}
+}
+
+.h{
+	&1,h1{
+		font-size: 2rem !important;
+	}
+	&2,h2{
+		font-size: 1.75rem !important;
+	}
+	&3,h3{
+		font-size: 1.5rem !important;
+	}
+	&4,h4{
+		font-size: 1.25rem !important;
+	} 
+	&5,h5{
+		font-size: 1rem !important;
+	}	
+}
+
+//텍스트
+//텍스트
+.text{
+	&-indigo-500{
+		color: $color-indigo-500;
+	}
+	&-black{
+		color: $color-black !important;
+	}	
+	&-white{
+		color: $color-white !important;
+	}	
+	&-white-lighter{
+		color: transparentize($color-white, .2) !important;
+	}	
+	&-white-light{
+		color: transparentize($color-white, .5) !important;
+	}	
+	&-ink{
+		color: $color-ink !important;
+	}
+	&-dark{
+		color: $color-dark !important;
+	}
+	&-body{
+		color: $color-body !important;
+	}
+	&-muted{
+		color: $color-muted !important;
+	}
+	&-form{
+		color: $color-form !important;
+	}
+	&-border{
+		color: $color-border !important;
+	}
+	&-light{
+		color: $color-light !important;
+	}
+	&-info{
+		color: $color-info !important;
+	}
+	&-danger{
+		color: $color-danger !important;
+	}
+	&-success{
+		color: $color-success !important;
+	}
+	&-warning{
+		color: $color-warning !important;
+	}
+	&-attention{
+		color: $color-attention !important;
+	}
+	&-mark{
+		color: $color-mark !important;
+	}
+	&-mark-dark{
+		color: $color-primary !important;
+	}
+	&-helpful{
+		color: $color-helpful !important;
+	}
+	&-brand-blue{
+		color: $color-brand-blue !important;
+	}
+	&-brand-yellow{
+		color: $color-brand-yellow !important;
+	}
+	&-brand-sky{
+		color: $color-brand-sky !important;
+	}
+	&-brand-green{
+		color: $color-brand-green !important;
+	}
+	&-text-fill{
+		background: linear-gradient(90deg, #b3aef5 4.68%, #d7cbe7 42.61%, #e5c8c8 64.68%, #ecbdaa 96.43%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+//배경
+.bg{
+	&-indigo-500{
+		background-color: $color-indigo-500
+	}
+	&-indigo-600{
+		background-color: $color-indigo-600
+	}
+	&-black{
+		background-color: $color-black !important;
+	}
+	&-white{
+		background-color: $color-white;
+	}	
+	&-white-lighter{
+		background-color: transparentize($color-white, .9) !important;
+	}	
+	&-white-500{
+		background-color: transparentize($color-white, .5) !important;
+	}	
+	&-white-gra{
+		background: linear-gradient(to top, rgba(255,255,255, 1), rgba(255,255,255,.6) 70%, rgba(255,255,255,0));
+	}	
+	&-darken{
+		background-color: $color-darken !important;
+	}
+	&-dark-gra{
+		background: linear-gradient(to top, rgba(0,0,0, .6), rgba(0,0,0,.1) 70%, rgba(0,0,0,0));
+	}		
+	&-darkgray{
+		background-color: $color-darkgray !important;
+	}
+	&-light{
+		background-color: $color-light !important;
+	}
+	&-form{
+		background-color: $color-form !important;
+	}
+	&-border{
+		background-color: $color-border !important;
+	}
+	
+	&-sky-light{
+		background-color: $color-sky-light !important;
+	}
+	&-info{
+		background-color: $color-info !important;
+	}
+	&-alert-primary{
+		background-color: $color-alert-primary !important;
+	}
+	&-danger{
+		background-color: $color-danger !important;
+	}
+	&-alert-danger{
+		background-color: $color-alert-danger !important;
+	}
+	&-success{
+		background-color: $bg-success !important;
+	}
+	&-alert-success{
+		background-color: $color-alert-success !important;
+	}
+	&-warning{
+		background-color: $color-warning !important;
+	}
+	&-warning{
+		background-color: $bg-warning !important;
+	}
+	&-alert-warning{
+		background-color: $color-alert-warning !important;
+	}
+	&-attention{
+		background-color: $color-attention !important;
+	}
+	&-alert-attention{
+		background-color: $color-alert-attention !important;
+	}
+	&-mark{
+		background-color: $color-mark !important;
+	}
+	&-mark-dark{
+		background-color: $color-primary !important;
+	}
+	
+	&-change{
+		background-color: $color-change !important;
+	}
+	&-alert-change{
+		background-color: $color-alert-change !important;
+	}
+	&-helpful{
+		background-color: $color-helpful !important;
+	}
+	&-brand-blue{
+		background-color: $color-brand-blue !important;
+	}
+	&-brand-yellow{
+		background-color: $color-brand-yellow !important;
+	}
+	&-brand-sky{
+		background-color: $color-brand-sky !important;
+	}
+	&-brand-green{
+		background-color: $color-brand-green !important;
+	}
+	&-brand-indigo{
+		background-color: $color-brand-indigo !important;
+	}
+	&-brand-red{
+		background-color: $color-brand-red !important;
+	}
+	&-brand-purple{
+		background-color: $color-brand-purple !important;
+	}
+	&-brand-pink{
+		background-color: $color-brand-pink !important;
+	}
+
+	&-hover-dark{
+		transition: all .2s;
+		&:hover{
+			background-color: transparentize($color-dark, .95) !important;
+		}
+	}
+	&-hover--dark{
+		&:hover{
+			background-color: transparentize($color-dark, .95) !important;
+		}
+	}
+	&-hover-light{
+		&:hover{
+			background-color: transparentize($color-light, .95) !important;
+			transition: all 1s;
+		}
+	}
+	&-white-10{
+		background-color: transparentize(#fff,.1);
+	}
+	&-dim{
+		background-image: linear-gradient(180deg,rgba(0,0,0,.34) 0,rgba(0,0,0,.338) 3.5%,rgba(0,0,0,.324) 7%,rgba(0,0,0,.306) 10.35%,rgba(0,0,0,.285) 13.85%,rgba(0,0,0,.262) 17.35%,rgba(0,0,0,.237) 20.85%,rgba(0,0,0,.213) 24.35%,rgba(0,0,0,.188) 27.85%,rgba(0,0,0,.165) 31.35%,rgba(0,0,0,.144) 34.85%,rgba(0,0,0,.126) 38.35%,rgba(0,0,0,.112) 41.85%,rgba(0,0,0,.103) 45.35%,rgba(0,0,0,.1) 48.85%,rgba(0,0,0,.103) 52.35%,rgba(0,0,0,.112) 55.85%,rgba(0,0,0,.126) 59.35%,rgba(0,0,0,.144) 62.85%,rgba(0,0,0,.165) 66.35%,rgba(0,0,0,.188) 69.85%,rgba(0,0,0,.213) 73.35%,rgba(0,0,0,.237) 76.85%,rgba(0,0,0,.262) 80.35%,rgba(0,0,0,.285) 83.85%,rgba(0,0,0,.306) 87.35%,rgba(0,0,0,.324) 90.85%,rgba(0,0,0,.338) 94.35%,rgba(0,0,0,.347) 97.85%,rgba(0,0,0,.35));
+	}
+}
+
+.rounded{
+	&-20{
+		border-radius: 20px;
+	}
+}
+
+
+.border{
+	border:1px solid #E0E0E0 !important;
+	&-darken{
+		border:1px solid $color-darken !important;
+	}
+	&-bottom{
+		border-bottom: 1px solid #E0E0E0 !important;
+	}
+	&-bottom-light{
+		border-bottom: 1px solid transparentize($color-border, 0.9) !important;
+	}
+	&-black{
+		border:1px solid $color-ink !important;
+
+	}
+}
+
+.border{
+	border:1px solid #E0E0E0 !important;
+	&-darken{
+		border:1px solid $color-darken !important;
+	}
+	&-bottom{
+		border-bottom: 1px solid #E0E0E0 !important;
+	}
+	&-bottom-light{
+		border-bottom: 1px solid transparentize($color-border, 0.9) !important;
+	}
+	&-attention{
+		border:1px solid $color-attention-dark !important;
+	}
+}	
+
+
+
+
+@mixin text-decoration($name) {
+	text-decoration: $name;
+}
+
+// 폰트
+.font-weight{
+	&-bold{
+		font-weight: $font-weight-bold; 
+	}	
+	// &-bolder,th{
+	// 	font-weight: $font-weight-bolder !important;
+	// }
+	&-normal{
+		font-weight: $font-weight-normal !important;
+	}
+	&-lighter{
+		font-weight: $font-weight-lighter !important;
+	}
+	&-light {
+		font-weight: $font-weight-light !important;
+	}
+}
+
+
+
+// 탭
+.nav-tabs{
+	border-bottom: none;
+	.nav{
+		&-item.active {
+			border:none;
+			a{
+				color: $color-ink !important;
+			}
+		}	
+		&-link{
+			color:$color-muted !important;
+			border:none;
+		}	
+	}
+}
+.nav-tabs-bottom-border{
+	.navTab.active{
+		color: black;
+		font-weight: $font-weight-bold;
+		border-bottom: 2px solid black;
+	}
+	.navTab{
+		color: $color-body ;
+	}
+}
+// 폼
+.form-control{
+	font-size: 1rem;
+}
+// 커서
+@mixin cursor($name) {
+	cursor: $name;
+}
+.cursor-pointer{
+	cursor: pointer;
+}
+// 효과
+@mixin shadow-sm($value){
+    box-shadow: 0 .125rem .25rem $value !important;	
+}
+
+@mixin shadow($value){
+	box-shadow: 0 .5rem 1rem $value!important;
+}
+
+@mixin shadow-lg($value){
+	box-shadow: 0 1rem 3rem $value!important;
+}
+.shadow{
+	&-brand{
+		@include shadow($color-mark)
+	}
+	&-brand-lg{
+		@include shadow-lg($color-mark)
+	}
+	&-xs{
+		box-shadow: 0px 2px 0px rgba(0,0,0,.15);
+	}
+}
+.hover-white{
+	&:hover{
+		background-color: $color-light;
+	}
+}
+.shadow{
+	transition: all .4s;	
+	&-hover{
+		&:hover{
+			box-shadow: 0 1rem 3rem rgba(0,0,0,.15) !important;	
+			transform: translateY(-4px);
+		}		
+	}
+	&-hover-brand{
+		&:hover{
+			box-shadow: 0 1rem 3rem transparentize($color-mark, .6) !important;	
+			transform: translateY(-4px);
+		}		
+	}
+}
+.image-hover{
+	background-size:auto 110%;
+	background-position:center;
+	background-repeat: no-repeat;
+	transition: background-size .6s;
+	&:hover{
+		background-size:auto 115%;
+	}
+}
+
+//배경
+@mixin background-transparentize($color,$amount) {
+	background-color: transparentize($color,$amount);
+}
+
+// 테이블
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.02);
+}
+.table-lg td, .table-lg th{
+	padding: 1rem 0.75rem;
+}
+
+// 스페이싱
+// 16px
+$spacer:1rem;
+// 4px
+$spacer1:$spacer*0.25;
+// 8px
+$spacer2:$spacer*0.5;
+// 24px
+$spacer4:$spacer*1.5;
+// 48px
+$spacer5:$spacer*3;
+// 56px
+$spacer6:$spacer*3.5;
+// 64px
+$spacer7:$spacer*4;
+
+
+.m{
+	&t--4{
+		margin-top: 4rem;
+	}
+	&b--4{
+		margin-bottom: 4rem;
+	}
+	&t--75{
+		margin-top: 7.5rem;
+	}	
+	&b--75{
+		margin-bottom: 7.5rem;
+	}	
+	&t--150{
+		margin-top: 15rem;
+	}	
+	&b--150{
+		margin-bottom: 15rem;
+	}
+
+}
+//모바일
+@media (max-width: 576px){
+	.mb-xs-0 {
+		margin-bottom: 0px;
+	}
+	.text{
+		&-center{
+			&-sm{
+				text-align:center;
+			}
+		}
+	}
+
+}
+
+// 웹
+@media (min-width: 768px){
+	html{
+		font-size: 16px;
+	}
+	.p{
+		&b-md--4{
+			padding-bottom: 4rem;
+		}
+		&t-md--4{
+			padding-top: 4rem;
+		}			
+	}
+	.m{
+		&t-md--150{
+			margin-top: 15rem;
+		}
+		&b-md--150{
+			margin-bottom: 15rem;
+		}
+	}
+	.h{
+		&1,h1{
+			font-size: 2.5rem !important;
+		}
+		&2,h2{
+			font-size: 2rem !important;
+		}
+		&3,h3{
+			font-size: 1.75rem !important;
+		}
+		&4,h4{
+			font-size: 1.5rem !important;
+		} 
+		&5,h5{
+			font-size: 1.25rem !important;
+		}	
+		&6{
+			font-size: 1rem !important;
+		}	
+	}
+}
+//
+.p{
+	&t--4{
+		padding-top: 4rem;
+	}
+	&t--r{
+		padding-right: 4rem;
+	}
+	&b--4{
+		padding-bottom: 4rem;
+	}
+	&t--l{
+		padding-left: 4rem;
+	}
+	&t--75{
+		padding-top: 7.5rem;
+	}	
+	&b--75{
+		padding-bottom: 7.5rem;
+	}	
+}
+.btn{
+	&-brand-indigo {
+		color: #fff;
+		background-color: $color-mark;
+		border-color: darken($color-mark,5%);
+		&:hover{
+				color: #fff;
+				background-color: darken($color-mark,3%);
+		}
+	}
+}
+// 이미지
+.image-contrast{
+	image-rendering: -webkit-optimize-contrast;
+}
+.image-pixelated {
+    image-rendering: pixelated;
+}
+$list-padding-left:1.8rem;
+//리스트
+.list{
+	&-check{
+	  list-style-type: none !important;
+	  box-sizing: border-box;
+	  li{
+		list-style: none !important;
+		background: url('/resources/img-hp/icon-check.png') 4px 5px !important;
+		background-repeat: no-repeat;
+		padding-left: 24px;
+	  }
+	}
+	&-text{
+		box-sizing: border-box;
+		padding-left: 0.9!important;
+		li{
+		  list-style: none !important;
+		}
+	}
+	&-disc{
+	  box-sizing: border-box;
+	  padding-left: $list-padding-left!important;
+	  li{
+		list-style: disc !important;
+	  }
+	}
+	&-square{
+	  box-sizing: border-box;
+	  padding-left: $list-padding-left!important;
+	  li{
+		list-style: square !important;
+	  }
+	}  
+	&-counter-bracket{
+	  counter-reset: section;
+	  list-style-type: none;
+	  padding-left: $list-padding-left!important;
+	  li::before , li:before{
+		counter-increment: section;
+		content: "("counter(section) ")";
+		// font-weight: $font-weight-bolder;
+		margin-left: -2.3rem;
+		width: 2rem;
+		position: absolute;
+		text-align: right;
+	  }
+	}
+	&-counter{
+	  counter-reset: section;
+	  list-style-type: none;
+	  padding-left: $list-padding-left!important;
+	  li::before , li:before{
+		counter-increment: section;
+		content: counter(section)".";
+		// font-weight: $font-weight-bolder;
+		margin-left: -2.4rem;
+		width: 2rem;
+		position: absolute;
+		text-align: right;
+	  }
+	}  
+	&-process{
+		max-width: 240px;
+		// li
+		.process{
+			list-style: none;
+			position: relative;
+			flex:1 1 auto;
+			// li
+			&:nth-child(even){
+				.process-iconWrap{
+					display: flex;
+					-webkit-box-pack: end;
+					-ms-flex-pack: end;
+					justify-content: flex-end;
+				}
+			}	
+			&:first-child{
+				// figure > line
+				.process-line::before{
+					height: 50%;	
+					bottom: 0px;
+					top: auto;
+				}
+			}							
+			&:last-child{
+				// figure > line
+				.process-line::before{
+					height: 50%;	
+					top: 0px;
+					bottom: auto;
+				}
+			}							
+			// figure
+			&-line{
+				margin-top: 0;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: 0 !important;
+				// line
+				&::before{
+					content: '';
+					width: 3px;
+					background-color: $color-dark;
+					height: 100px;
+					display: inline-block;
+					position: absolute;
+					bottom: 0;
+					left: calc(50% - 1.5px);
+				}	
+				// dot
+				&::after{
+					content: '';
+					display: block;
+					position: absolute;
+					left: calc(50% - 6px);
+					bottom: auto;
+					background-color: #fff;
+					border-radius: 50%;
+					height: 11px;
+					width: 11px;
+					border: solid #333 3px;
+					top: calc(50% - 6px);
+				}	
+			}
+			&-text{
+				width: 100%;
+				text-align: center;
+			}
+			&-iconWrap{
+				display: flex;
+				margin-bottom: 0rem;
+			}
+			&-img{
+				display: flex;
+				width: 80px;
+				text-align: center;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 4px;
+				img{
+					width: 100%;
+					margin: 0 auto;
+				}
+			}
+		}
+
+	}
+
+	&-indent-counter{
+		text-indent: -2.3rem;
+		padding-left: 2.5rem;
+	}
+  }
+//   포지션
+.positon{
+	&-relative{
+		position: relative;
+	}
+	&-absolute{
+		position: absolute;
+	}
+}
+	
+// 디스플레이
+// 플렉스
+.d{
+	&-flex{
+		display: flex;
+	}
+	&-block{
+		display: block;
+	}	
+}
+.flex{
+	&-row{
+		flex-direction: row;
+	}
+	&-column{
+		flex-direction: column;
+	}
+	&-wrap{
+		flex-wrap: wrap;
+	}
+	&-fill{
+		flex: 1 1 auto!important;
+	}
+	&-grow-1{
+		flex-grow: 1!important;
+	}
+}
+.align-items{
+	&-center{
+		align-items: center;
+		
+	}
+	&-stretch{
+		align-items: stretch !important;
+	}
+}
+.justify-content{
+	&-center{
+		justify-content: center;
+	}
+}
+// 이벤트
+.cursor-pointer{
+	cursor: pointer !important;
+}
+// 익스
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.font-weight{
+		&-bold{
+			font-weight: 800 !important; 
+			font-weight: bold !important;
+		}	
+		&-bolder,th{
+			font-weight: 700 !important;
+			font-weight: bold !important;
+		}
+		&-normal{
+			font-weight: 600 !important;
+			font-weight: bolder !important;
+		}
+		&-lighter{
+			font-weight: $font-weight-lighter !important;
+			font-weight: normal !important;
+		}
+		&-light {
+			font-weight: $font-weight-light !important;
+			font-weight: lighter !important;
+		}
+	}
+}
+// 웹
+@media (min-width: 768px){
+
+	.font{
+		&--75{
+			font-size: 7.5rem;
+		}
+		&--4{
+			font-size: 4rem;
+		}
+		&--3{
+			font-size: 3rem;
+		}
+	}
+	.list-process{
+		display: flex;
+		flex-direction: row;
+		max-width: none;
+		// li
+		.process{
+			position: relative;
+			list-style: none;				
+			// li
+			&:first-child{
+				// figure > line
+				.process-line::before{
+					width: 50%;
+					height: 3px;
+					right: 0px;
+					bottom: 0;
+					left: auto;
+				}
+			}
+			// li		
+			&:last-child{
+				// figure > line
+				.process-line::before{
+					width: 50%;	
+					height: 3px;
+					bottom: 0px;
+					right: auto;
+					top: auto;
+				}
+			}	
+			// figure
+			&-line{
+				width: 100%;
+				position: relative;
+				height: auto;
+				// line
+				&::before{
+					content: '';
+					height: 3px;
+					background-color: $color-dark;
+					width: 100%;
+					display: block;
+					position: absolute;
+					bottom: 0px;
+					right:0px;
+					left: 0px;
+				}	
+				// dot
+				&::after{
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: -4px;
+					background-color: #fff;
+					border-radius: 50%;
+					height: 11px;
+					width: 11px;
+					border: solid #333 3px;
+					left: calc(50% - 6px);
+					top: auto;
+					right: 0;
+				}	
+			}
+			&-text{
+				width: 100%;
+				text-align: center;
+			}
+			&-iconWrap{
+				display: flex;
+				flex-direction: column;	
+				justify-content: center;
+				align-items: center;	
+				margin-bottom: 1rem;			
+			}
+			&-img{
+				display: flex;
+				height: 80px;
+				text-align: center;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 0px;
+				img{
+					width: 100%;					
+					margin: 0 auto;
+				}
+			}
+		}
+
+	}
+}
+
+// 모바일
+@media (max-width: 768px) {
+	.text-center-sm{
+		text-align: center !important;
+	}
+}
+@media (max-width: 960px) {
+	.text-center-lg{
+		text-align: center !important;
+	}		
+}
+
+// 효과
+.eHoverWrap{
+	transition: all .4s;
+	&:hover{
+		.btn-brand-indigo{
+			box-shadow: 0 1rem 3rem transparentize($color-mark, .6) !important;	
+			transform: translateY(-4px);
+		}
+	}
+}
+a.eLink{
+	position: relative;
+	&::before{
+		content: '';
+		display: inline-block;
+		position: absolute;
+		bottom: 50%;
+		width: 0%;
+		height: 1px;
+		background-color: transparentize($color-mark, 0.4) ;
+	}
+	&:hover{
+		&::before{
+		transition: all .2s;		
+		width: 100%;			
+		}
+		text-decoration: none !important;
+	}
+}	
+.eLinkWrap{
+	.eLink{
+		position: relative;
+		
+		&::before{
+			content: '';
+			background-color: transparentize($color-mark, .4);
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 0px;
+			height: 1px;
+			transition: width .4s .4s;
+		}
+	}
+	&:hover{
+		.eLink{
+			position: relative;
+			&::before{
+				width: 100%;
+			}
+		}
+	}
+}
+
+.eDown{
+	.icon{
+		animation: no-transform 2.4s cubic-bezier(0, 0.9, 0.3, 1.2) infinite;	
+	}
+}
+
+@keyframes no-transform{
+	100%{
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.iDown{
+	.icon{
+		display: inline-block;
+		position:relative;
+		width: 16px;
+		height: 16px;
+		opacity: 0;
+		transition: all .6s;
+		transform: translateY(-2rem);
+		&::before{
+			content: '';
+			display: inline-block;
+			position:absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			border-right: 1px solid $color-body;
+			border-bottom: 1px solid $color-body;
+			transform: rotate(45deg);
+		}			
+	}
+
+}
+.iDownWrap{
+	&:hover{
+		.icon{
+			opacity: 1;
+			animation: none;
+			transform: translateY(0rem);			
+		}
+	}		
+}
+
+.eHoverRec{
+	position: relative;
+	
+	&::after{
+		content: '';
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		background-color: transparentize($color-mark, .95);
+		border-radius: 4px;
+		opacity: 0;
+		transition: all .4s cubic-bezier(0, 0.9, 0.3, 1.2) ;
+		transform:scale(.7)
+
+	}		
+
+
+	&:hover{
+		&::after{
+			opacity: 1;
+			transform:scale(1)
+		}	
+	}
+}
+
+.eFadeWrap{
+	perspective: 40rem;	
+}
+.carousel1{
+	.eFadeText{
+		opacity: 0;
+		transform: translateZ(6rem);  
+		animation: no-transform 2.4s cubic-bezier(0,0,0,1) forwards;
+	}
+	.eFadeText .eFade {
+		
+		animation: no-transform linear 2.4s forwards;
+		opacity: 0;
+	} 
+	.eFadeText .eFade0 { animation-delay: 0s; opacity: 1;}
+	.eFadeText .eFade1 { animation-delay: 0.6s;}
+	.eFadeText .eFade2 { animation-delay: 1.2s; }
+	.eFadeText .eFade3 { animation-delay: 1.8s; }
+	.eFade4 { opacity: 0; 
+	animation: no-transform linear .8s 3s forwards;
+	}
+	.eFade5 { opacity: 0;
+	animation: no-transform linear .8s 3.6s forwards;
+	}
+}
+.icon-divider-vertical{
+	position: relative;
+	display: inline-block;
+	width: 1px;
+	height: 36px;
+	vertical-align: middle;
+	&::before{
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 100%;		
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		background-color: $color-ink;
+	}
+}
+// 레이아웃
+
+// 네비게이션
+#navBar{
+	position: fixed;
+	height: 60px;
+	top: 0px;
+	z-index: 90;
+	border-bottom:1px solid $color-light;
+	.link{
+		height: 100%;
+		color: $color-ink;
+		text-align: center;
+		cursor: pointer !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.active{
+		color:$color-mark;
+		font-weight: bold;
+	}
+	&::after{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		bottom: 0;
+		content: '';
+		background-color: #fff;
+		// background: linear-gradient(to top, rgba(238,238,239,1), rgba(255,255,255,1));
+		z-index: -1;
+	}
+}
+@media (min-width: 992px){
+	#portfolio{
+		.sider{
+			height: 100vh !important;
+			position: sticky;			
+		}
+
+	}
+}
+//디자인은
+.sHelperWrap{
+	&:hover{
+		.sHelper{	
+			opacity: 1;
+		}
+	}
+}
+.sHelper{
+	position: absolute;
+	bottom: -32px;
+	left: 50%;
+	width: 150px;
+	margin-left: -76px;
+	text-align: center;
+	opacity: 0;
+	display: inline-block;
+	transition: all .4s;
+}
+//디자인 과정
+.work-section{
+	left: 0px !important;
+}
+.work-img1{
+	transform-style: preserve-3d;transform: perspective(300px);
+}
+#pinContainer {
+	transition: all .4s;
+	width: 100% !important;
+	overflow: hidden;
+	perspective: 1000;
+}
+#slideContainer {
+	width: 400%; /* to contain 4 panels, each with 100% of window width */
+	height: 100%;
+}
+.panel {
+	/* width: 25%; */
+	height: 100%;
+	float: left;
+}
+.page-title{
+	transition: all .4s;
+}
+// 함께한 곳
+#career{
+	.career-img{
+		opacity: 0;
+		transition: all .1s ease-in-out;
+	}
+	.absolute{
+		position: absolute;
+		top:0px;
+		left:0px;
+	}	
+	.visible{
+		opacity: 1;
+	}
+	.career-scrollWrap{
+		position: absolute;   
+		width: 150px;
+	}
+	.career-text{
+		position: absolute;
+		left: 20px;
+		display: inline-block;
+	} 
+	.career-scroll{
+		position: absolute;
+		left: -9px;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		padding-right:8px;
+		background-color: white;
+		border:4px solid $color-indigo-600;
+		border-radius: 100%;
+	}
+	.career-scrollWrap{
+		position: absolute;   
+		width: 150px;
+	}
+	.career-text{
+		position: absolute;
+		left: 20px;
+		display: inline-block;
+	} 
+} 
+
+// 함께한 일
+.portfolio-con{
+	margin-top: 0rem;
+	padding-bottom: 4rem;
+	.portfolio-img{
+		position: relative;
+		min-height: 50vh;
+		background-size: cover; 
+		background-position: center;
+		transition: all .2s;
+		.portfolio-title{
+			color: $color-white;
+		}
+		.portfolio-tag, .portfolio-desc{
+			display: none;
+		}
+		.bg-dim{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			opacity:0;
+			transition: all 0.4s;
+			&::before{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 18px;
+				background-color: $color-white;	
+			}
+		}
+		&:hover{
+			.bg-dim{
+				opacity: 1 !important;
+			}
+			.portfolio-title{
+				color: $color-mark;
+
+			}
+			.portfolio-desc{
+				display: block;
+				color: $color-mark;
+				
+			}
+			.portfolio-tag{
+				display: block;
+			}
+		}	
+	}	
+}
+
+
+@media (min-width: 768px){
+		.portfolio-con1{
+			margin-top: 40vh;
+		}
+		.portfolio-con2{
+			margin-top: -10vh;
+		}
+}
+
+// 탑
+.btn-top{
+	position: fixed;
+	bottom: 2.5rem;
+	right:2rem;
+	height: 40px;
+	width: 40px;
+	z-index: 90;
+	display: inline-block;
+	background-color: transparentize($color-white, .1);
+	opacity: 0;
+	transition: all .4s;
+	.iTop{
+		position: relative;
+		width: 12px;
+		height: 12px;
+		display: inline-block;
+		transition: all .4s cubic-bezier(0, 0.9, 0.3, 1.2) ;
+		transform: translateY(0rem);
+		&::before{
+			content: '';
+			display: inline-block;
+			position:absolute;
+			top: 3px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			border-left: 1px solid $color-mark;
+			border-top: 1px solid $color-mark;
+			transform: rotate(45deg);
+		}		
+	}
+	&:hover{
+		.iTop{
+			transform: translateY(-3px);
+		}
+	}
+
+}
