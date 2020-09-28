@@ -98,7 +98,10 @@ Common.prototype._iniEvent = function() {
             objThis._navActive(objThis.$navLink, $(this));
             e.preventDefault();
             const link = $(this).data('link');
-            console.log($("[data-name='"+link+"']").offset().top)
+            if(link === 'process'){
+                console.log($("[data-name='process']").offset().left)
+                $("[data-name='process']").offset().left = 0
+            }
             $('html, body').animate({
                 scrollTop: $("[data-name='"+link+"']").offset().top
             }, 500);
