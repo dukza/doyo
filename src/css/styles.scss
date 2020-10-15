@@ -379,6 +379,9 @@ body{
 		border:1px solid $color-ink !important;
 
 	}
+	&-white{
+		border: 1px solid $color-white;
+	}
 }
 
 .border{
@@ -1624,6 +1627,7 @@ $navBar-height:0px;
 				}
 				.bg{
 					&::before{
+						backdrop-filter: blur(0.05em);
 						background-color: transparentize($color-indigo-600, .2);
 					}
 				}
