@@ -27,12 +27,12 @@ Common.prototype._init = function(selector) {
     this.$careerScrollS = this.$selector.find('.career-scroll1');
     this.$careerScrollE = this.$selector.find('.career-scroll3');
     this.$careerScrollBar = this.$selector.find('.career-scrollBar');
-    this.$btnTop = this.$selector.find('.btn-top');
+    this.$btnTop = this.$selector.find('.js-btn-top');
     this.$designIs = this.$selector.find('#designIs');
     this.$process = this.$selector.find('#pinContainer');
     this.$career = this.$selector.find('#career');
     this.$portfolio = this.$selector.find('#portfolio');
-    this.$navLink = this.$selector.find('.jLink');
+    this.$navLink = this.$selector.find('.js-link');
     this.$jSection = this.$selector.find('.jSection');
     
 }
@@ -70,7 +70,7 @@ Common.prototype._iniEvent = function() {
             const clientHeight = $('html').prop("clientHeight");
             const scrolled = winScroll/(scrollHeight - clientHeight) * 100;
             // console.log(windowScrollTop, htmlScrollTop, scrollHeight ,  clientHeight, scrolled)
-            $(objThis.$progressBar.find('.bg-mark')).css({
+            $(objThis.$progressBar.find('.bg-indigo-500')).css({
                 'width':scrolled+"%"
             })
             // career 스크롤
@@ -98,16 +98,28 @@ Common.prototype._iniEvent = function() {
             objThis._navActive(objThis.$navLink, $(this));
             e.preventDefault();
             const link = $(this).data('link');
+            let scrollTopTO = $("[data-name='"+link+"']").offset().top;
             if(link === 'process'){
-                console.log($("[data-name='process']").offset().left)
-                $("[data-name='process']").offset().left = 0
-            }
+                scrollTopTO = $("[data-name='designIs']").height();
+            } 
             $('html, body').animate({
-                scrollTop: $("[data-name='"+link+"']").offset().top
+                scrollTop: scrollTopTO
             }, 500);
-            
-
+        },
+        mouseover:function(){
+            objThis.$navLink.css({
+                'opacity':'.6'
+            })            
+            $(this).css({
+                'opacity':'1'
+            })
+        },
+        mouseout:function(){
+            objThis.$navLink.css({
+                'opacity':'1'
+            })            
         }
+
     })
     this.$btnTop.on({
         click:function(e){

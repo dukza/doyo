@@ -32,16 +32,13 @@ $(function(){
     let sectionSlidesT = new gsap.timeline()
         // animate to second panel
         .to("#slideContainer", 0, {z: -1})		// move back in 3D space
-        .to("#slideContainer", 1,   {x: "-25%",delay: 1})	// move in to first panel
+        .to("#slideContainer", 1,   {x: "-33.33%",delay: 1})	// move in to first panel
         .to("#slideContainer", 0, {z: 0})				// move back to origin in 3D space
         // animate to third panel
         .to("#slideContainer", 0, {z: -1, delay: 1})
-        .to("#slideContainer", 1,   {x: "-50%"})
-        .to("#slideContainer", 0, {z: 0})
+        .to("#slideContainer", 1,   {x: "-66.7%", delay: 1})
+        .to("#slideContainer", 0, {z: 0, delay: 1})
         // animate to forth panel
-        .to("#slideContainer", 0, {z: -1, delay: 1})
-        .to("#slideContainer", 1,   {x: "-75%"})
-        .to("#slideContainer", 0, {z: 0, delay: 1});
 
     // create scene to pin and link animation
     let sectionSlidesScene =new ScrollMagic.Scene({
@@ -67,13 +64,14 @@ $(function(){
       })
       .setTween(careerT1)
       .addTo(careerC)
-      // .addIndicators({
-      //   name: "text1"
-      // });
+      .setClassToggle('.fixed', 'position-sticky')
+    //   .addIndicators({
+    //     name: "text1"
+    //   });
 
     // define movement 
     let careerT2 = TweenMax
-        .to(['.career-con2','.career-text2'],{opacity:0.4})
+        .to(['.career-con2','.career-text2'],.1,{opacity:0.4})
     // create scene
     let careerS2 = new ScrollMagic.Scene({
         triggerElement: ".career-con2",
@@ -81,12 +79,12 @@ $(function(){
       })
       .setTween(careerT2)
       .addTo(careerC)
-      // .addIndicators({
-      //   name: "text2"
-      // }); 
+    //   .addIndicators({
+    //     name: "text2"
+    //   }); 
     // define movement 
     let careerT2Img = TweenMax
-        .to('.career-img2',{opacity:1})
+        .to('.career-img2',.1,{opacity:1})
     // create scene
     let careerS2Img = new ScrollMagic.Scene({
         triggerElement: ".career-con2",
@@ -94,22 +92,23 @@ $(function(){
       })
       .setTween(careerT2Img)
       .addTo(careerC)
-      // .addIndicators({
-      //   name: "img2"
-      // });      
+    //   .addIndicators({
+    //     name: "img2"
+    //   });      
     // define movement 
     let careerT3Img = TweenMax
-        .to('.career-img3',{opacity:1})
+        .to('.career-img3',.1,{opacity:1})
     // create scene
     let careerS3Img = new ScrollMagic.Scene({
         triggerElement: ".career-con3",
-        offset:-60,
+        offset:-100,
       })
       .setTween(careerT3Img)
+
       .addTo(careerC)
-      // .addIndicators({
-      //   name: "img3"
-      // });   
+    //   .addIndicators({
+    //     name: "img3"
+    //   });   
       
     // portfolio
     let portfolioC = new ScrollMagic.Controller();

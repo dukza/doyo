@@ -3,338 +3,296 @@
     <head>
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="./src/css/styles.css">
         <!-- 제이쿼리 -->
-        <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+        <script src="./src/js/jquery-2.2.1.js"></script>
         <script type="text/javascript" src="./src/js/jquery.easing.1.3.js"></script> 
         <!-- 스크롤 매직 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-        <script src="./src/scroll.js"></script>
+        <script src="./src/js/ScrollMagic.min.js"></script>
+        <script src="./src/js/TweenMax.min.js"></script>
+        <script src="./src/js/animation.gsap.min.js"></script>
+        <script src="./src/js/debug.addIndicators.min.js"></script>
+        <script src="./src/js/scroll.js"></script>
         <!-- tilt -->
-        <!-- <script src="./src/tilt/tilt.jquery.js"></script> -->
+        <script src="./src/tilt/tilt.jquery.js"></script>
         <!-- 레이아웃 제이쿼리 -->
         <script type="text/javascript" src="./src/js/common.js"></script>
     </head>
     <body>
         <div class="container-fluid" id="page">
             <div class="row">
+                <!-- 프로그레스 -->
+                <div class="col-12 position-fixed js-progressBar" style="top: 0px; height: 2px;z-index: 100;">
+                    <div class="row h-100">
+                        <div class="h-100 bg-indigo-500"></div>
+                    </div>
+                </div>
+                <!-- //프로그레스 -->                
                 <!-- 네비 -->
-                <div class="col-12 d-flex align-items-center justify-content-center" style="z-index: 90; box-shadow: 0 1rem 3rem rgba(255,255,255,.08)!important;" id="navBar">
-                    <a class="link active mr-3 eLink jLink" data-link="designIs">디자인 이란</a>
-                    <a class="link mx-3 eLink jLink" data-link="process">디자인 과정</a>
-                    <a class="link mx-3 eLink jLink" data-link="career">함께한 곳</a>
-                    <a class="link eLink ml-3 jLink" data-link="portfolio">함께한 일</a>
+                <div class="col-12" id="navBar">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 mt-5 d-flex align-content-center">
+                            <a class="h5 link mr-4 js-link active bold" data-link="designIs" lang="en">Design is</a>
+                            <a class="h5 link mr-4 js-link bold" data-link="process" lang="en">Process</a>
+                            <a class="h5 link mr-4 js-link bold" data-link="career" lang="en">Career</a>
+                            <a class="h5 link js-link bold" data-link="portfolio" lang="en">Works</a>                            
+                        </div>
+                    </div>
+
                 </div>
                 <!-- //네비 -->
-                <!-- 프로그레스 -->
-                <div class="col-12 position-fixed js-progressBar" style="top: 0px; height: 2px;z-index: 90;">
-                    <div class="row h-100">
-                        <div class="h-100 bg-mark"></div>
-                    </div>
-                </div>
-                <!-- //프로그레스 -->
                 <!-- 탑버튼 -->
-                <a class="btn btn-top text-mark rounded-pill shadow-hover p-2" href=""><span class="iTop"></span></a>
+                <a class="btn rounded-pill shadow-hover js-btn-top" id="btn-top"><span class="iTop"></span></a>
                 <!-- //탑버튼 -->
                 <!-- 디자인 이란 -->
-                <div class="col-12 section vh-100 page-title jSection" style="background: linear-gradient(#fff, #EBEEFF);perspective: 8rem;transform-style: preserve-3d;
-                " id="designIs" data-name="designIs">          
-                    <div class="row h-100 align-items-center align-items-md-end flex-wrap carousel1">
-                        <div class="col-12 mb-xs-0 mb--75">
-                            <div class="row justify-content-center eFadeWrap" >
-                                <div class="col-12">
-                                    <div class="row eHoverWrap eFadeText">
-                                        <div class="col-12 font--3 text-center text-ink line-height-1 pb-5 eFade eFade0" lang="en">
-                                            <span class="bold" lang="en">Design</span> is about finding <br />
-                                            and solving problems
-                                        </div>
-                                        <div class="col-12 text-ink text-center pb-5 ">
-                                            <span class="eFade eFade1">디자인은</span> 
-                                            <span class="eFade eFade2">문제를 <span class="">발견</span>하고</span>
-                                            <span class="eFade eFade3">문제를 <span class="">해결</span>하는 것이다</span>
-                                        </div>
-                                        <div class="col-12 text-center mb-5"><a role="button" class="btn btn-light p-3 font-14 text-ink text-left font-weight-bolder rounded-lg shadow-xs shadow-lg cursor-pointer eFade4" href="https://www.notion.so/dukja/UI-33732e9f48f44df68b4b8f380352f56d" target="_blank"><span class="d-inlie-block mr-5 mt-5 mb-5">문제 해결 과정 구경하기</span> <i class="fal fa-external-link"></i></a></div>                                          
-                                    </div>
-                                </div>
-                                <div class="col-auto text-center positon-relative sHelperWrap">
-                                    <span class="text-center bg-hover-dark rounded cursor-pointer p-3 d-inline-block eFade5 jLink iDownWrap " data-link="process" style="width: 56px;">
-                                        <span class="iDown eDown"><span class="icon"></span></span>
-                                    </span> 
-                                    <span class="font-12 sHelper">디자인 과정 보러가기</span>                                         
-                                </div>                      
+                <div class="col-12 vh-100 bg-dark-ink page-title" id="designIs" data-name="designIs">          
+                    <div class="row h-100 position-relative align-items-center justify-content-center carousel1">
+                        <div class="col-12 col-md-10">
+                            <div class="row ef-zoomText ef-btn-rotate">
+                                <div class="col-12 text-light bold mb-5 ef-fade ef-fade0" lang="en">
+                                    <span class="ef-fade ef-fade1 font--5">Design is</span> <br> <span class="font--3 ef-fade ef-fade2">about finding and solving problems</span>
+                                </div>   
+                                <div class="col-12 ef-fade ef-fade3">
+                                        <a class="font-weight-bolder" href="https://www.notion.so/dukja/UI-33732e9f48f44df68b4b8f380352f56d" target="_blank">
+                                            <span class="text">
+                                            문제 해결 과정 구경하기 <i class="fal fa-external-link-square"></i></span>
+                                            <svg>
+                                                <rect x="4" y="4" rx="0" ry="0" ></rect>
+                                            </svg>
+                                            <svg class="svg2">
+                                                <rect x="4" y="4" rx="0" ry="0"></rect>
+                                            </svg>
+                                        </a>
+                                </div>                                         
                             </div>
-                        </div>                      
-
-                    </div>
-                </div>
-                <!-- //디자인 과정 -->
-                <div class="vh-100 jSection" id="pinContainer" >
-                    <div class="d-flex flex-row" id="slideContainer" data-name="process">
-                        <div class="w-100 panel turqoise" >
-                            <div class="row no-gutters h-100 d-flex align-items-stretch justify-content-center">
-                                <div class="col-12" style="height: 60vh; background-color: #5551FF;" >
-                                    <div class="row no-gutters h-100 align-items-center justify-content-center positon-relative" >
-                                        <div class="col-12 col-lg-4 h5 offset-md-1 d-none d-md-block">
-                                            <div class="row no-gutters">
-                                                <div class="col-12 text-white font--3 font-figma line-height-1">
-                                                    Classroom<br />
-                                                    Design<br />
-                                                    Critique
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-lg-7 h-100" style="background-image:url(./src/images/process-design-01.png); background-size: 70%; background-position: bottom center; background-repeat: no-repeat;">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-10 process-con eLinkWrap">
-                                    <div class="row no-gutters w-100 align-items-start">
-                                        <div class="col-12 font-14 text-dark pb-3" lang="en">
-                                            UI Design
-                                        </div>
-                                        <div class="col-12 col-lg-4 h2 text-ink font-weight-bolder pb-4 pb-lg-0 line-height-13">
-                                            좋은 툴은 언제나 <br/>
-                                            환영입니다
-                                        </div>                            
-                                        <div class="col-12 col-lg-8 text-dark">
-                                            <div class="row">
-                                                <div class="col-12 mb-3">
-                                                    좋은 툴을 경험하길 좋아합니다.<br/>
-                                                    스케치와 피그마를 이용하여 UI를디자인합니다.<br>요즘은 피그마를 자주 이용합니다.
-                                                </div>
-                                                <div class="col-12">
-                                                    <a class="text-mark font-weight-bolder eLink" href="https://www.figma.com/file/NgkZoN01uyB3FntCXjN2ew/Doyo-Design" target="_blank">
-                                                        피그마로 만든 디자인 시스템 <i class="fal fa-external-link"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-100 panel blue">
-                            <div class="row no-gutters h-100 d-flex align-items-stretch justify-content-center">
-                                <div class="col-12 bg-light" style="height: 60vh;background-image: url(./src/images/process-design-02.png);background-size: cover;background-position: center;background-repeat: no-repeat;">
-                                    <div class="row no-gutters h-100 align-items-center justify-content-center">
-                                    </div>
-                                </div>
-                                <div class="col-10 process-con eLinkWrap">
-                                    <div class="row no-gutters w-100 align-items-start">
-                                        <div class="col-12 font-14 text-dark pb-3" lang="en">
-                                            Flexible UI
-                                        </div>
-                                        <div class="col-12 col-lg-4 h2 text-ink font-weight-bolder pb-4 pb-lg-0 line-height-13">
-                                            반응형 UI를 <br/>
-                                            고민합니다
-                                        </div>                            
-                                        <div class="col-12 col-lg-8 text-dark ">
-                                            <div class="row">
-                                                <div class="col-12 mb-3">
-                                                    확장성있고 유연한 UI를 좋아합니다.<br/>
-                                                    부트스트랩을 사용하거나 직접 구현합니다.<br/>
-                                                    SCSS를 이용해 효율적으로 스타일을 관리합니다.                    
-                                                </div>
-                                                <div class="col-12">
-                                                    <a class="text-mark font-weight-bolder eLink" href="https://www.fssuniverse.com/" target="_blank">
-                                                        반응형 코딩 웹페이지 <i class="fal fa-external-link"></i>
-                                                    </a>                 
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-100 panel blue">
-                            <div class="row no-gutters h-100 d-flex align-items-stretch justify-content-center">
-                                <div class="col-12 bg-light" style="height: 60vh;background-image: url(./src/images/process-design-03.png);background-size: cover;background-position: center;">
-                                    <div class="row no-gutters h-100 align-items-center justify-content-center">
-                                    </div>
-                                </div>
-                                <div class="col-10 process-con eLinkWrap">
-                                    <div class="row no-gutters w-100 align-items-start">
-                                        <div class="col-12 font-14 text-dark pb-3" lang="en">
-                                            I Love Javascript
-                                        </div>
-                                        <div class="col-12 col-lg-4 h2 text-ink font-weight-bolder pb-4 pb-lg-0 line-height-13">
-                                            자바스크립트를 <br/>
-                                            좋아합니다
-                                        </div>                            
-                                        <div class="col-12 col-lg-8 text-dark">
-                                            <div class="row">
-                                                <div class="col-12 mb-3">
-                                                    제이쿼리와 자바스크립트를 좋아합니다.<br/>
-                                                    트윈맥스와 리액트를 꾸준히 공부하고 있습니다.<br/>
-                                                    어렵지만 배움은 즐거워요.                                                    
-                                                </div>
-                                                <div class="col-12">
-                                                    <a class="text-mark font-weight-bolder eLink" href="https://dukza.github.io/nomflix/#/" target="_blank">리액트로 영화 서비스 만들기  <i class="fal fa-external-link"></i></a>
-                                                </div>
-                                            </div>
-
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-100 panel blue">
-                            <div class="row no-gutters h-100 d-flex align-items-stretch justify-content-center">
-                                <div class="col-12 bg-light" style="height: 60vh;background-image: url(./src/images/process-design-04.png);background-size: cover;background-position: center;background-blend-mode: multiply;">
-                                    <div class="row no-gutters h-100 align-items-center justify-content-center">
-                                    </div>
-                                </div>
-                                <div class="col-10 process-con">
-                                    <div class="row no-gutters w-100 align-items-center">
-                                        <div class="col-12 font-14 text-dark pb-3" lang="en">
-                                            I Love Web
-                                        </div>
-                                        <div class="col-12 col-lg-4 h2 text-ink font-weight-bolder pb-4 pb-lg-0 line-height-13">
-                                            이클립스나 깃으로 <br/>
-                                            빌드합니다
-                                        </div>                            
-                                        <div class="col-12 col-lg-8 text-dark">
-                                            웹에 대한 경험을 넓히는 일을 좋아합니다.<br/>
-                                            업무용으로 이클립스를 사용하고 개인 프로젝트는<br/>
-                                            깃을 사용해서 빌드합니다.
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
-
+                        </div>     
+                        <div class="col-auto btn-moreWrap ef-fade ef-fade4">
+                            <span class="js-link btn-more eDown" data-link="process"> 
+                                <span class="iDown"><span class="icon"></span></span>
+                                <div class="bold text" lang="en"></div>  
+                            </span> 
+                                    
                         </div>  
-                          
+                        <!-- <div class="ef-fade ef-fade5 object" style="color: #49fe37; top:50px;">Affordance</div> 
+                        <div class="ef-fade ef-fade5 object" style="color: #fbd032; top:120px; right: 100px;">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M59.199 56L63.1695 63.5H16.8305L20.801 56H59.199Z" stroke="#FBD032"/>
+                                <path d="M40 16L59 54H21L40 16Z" fill="#FBD032"/>
+                                </svg>
+                            <br>                                
+                            Pareto principle
+                        </div>  -->
                     </div>
-                     
                 </div>
-                <!-- //디자인 과정 -->
-                <!-- UX에 관한 글 -->
-                <div class="w-100 pt--75 pb--75 bg-light jSection">
-                    <div class="row no-gutters justify-content-center">
-                        <div class="col-10">
-                            <div class="row no-gutters align-items-start">
-                                <div class="col-12 font-14 text-dark pb-3" lang="en">
-                                    UX Archive
-                                </div>
-                                <div class="col-12 col-lg-4 h2 font-weight-bolder text-ink pb-4 pb-lg-0 line-height-13">
-                                    유용한 UX에<br/>
-                                    관한 글
-                                </div>                            
-                                <div class="col-12 col-lg-8 text-dark">
-                                    <div class="row">
-                                        <a class="col-12 text-decoration-none pt-1 pb-1 mb-4 cursor-pointer eHoverRec" href="https://www.artlebedev.com/ironov/" target="_blank">
-                                            <div class="row">
-                                                <div class="col-12 h5 text-dark font-weight-bolder">
-                                                    Nikolay Ironov
-                                                </div>
-                                                <div class="col-12 text-body font-14">
-                                                    A Russian design studio has developed an AI designer
-                                                </div>                                        
+                <!-- //디자인 이란 -->
+                <!-- 디자인 과정 -->
+                <div class="vh-100" id="pinContainer" >
+                    <div class="d-flex flex-row position-relative" id="slideContainer" data-name="process">
+                        <div class="w-100 position-absolute" style="top:0px; height: 120px;background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,90%) 50%, rgba(255,255,255,0%) 100%);">
+                        </div>
+                        <div class="w-100 panel" >
+                            <div class="w-100 h-100 d-flex align-items-stretch justify-content-center flex-wrap" >
+                                <div class="col-12 h-100 mx-auto pt--8 process-con eLinkWrap">
+                                    <div class="row h-100 justify-content-center">
+                                        <div class="col-12 h-100 ">
+                                            <div class="row h-100 align-items-stretch">
+                                                <div class="col-12 col-lg-5 offset-md-1 ef-btn-rotate">
+                                                    <div class="row">
+                                                        <div class="col-auto mb-4">
+                                                            <span class="font--3 text-black bold pb-2 d-inline-block" lang="en">Effective Design</span>                         
+                                                        </div>
+                                                        <div class="col-12 h5 text-ink font-weight-lighter mb-5">
+                                                             확장성있고 유연한 UI를 통해 최소의 리소스로 개발할 수있는 효율적인 디자인을 추구합니다. Figma와 Protopie로 제품을 객관적으로 평가하고 개선합니다.
+                                                        </div>
+                                                        <div class="w-100"></div>
+                                                        <div class="col-auto">
+                                                            <a class="font-weight-bolder" href="https://www.figma.com/file/NgkZoN01uyB3FntCXjN2ew/Doyo-Design" target="_blank">
+                                                                <span class="text">
+                                                                    피그마로 만든 디자인 시스템 <i class="fal fa-external-link-square"></i></span>
+                                                                <svg>
+                                                                    <rect x="4" y="4" rx="0" ry="0" ></rect>
+                                                                </svg>
+                                                                <svg class="svg2">
+                                                                    <rect x="4" y="4" rx="0" ry="0"></rect>
+                                                                </svg>
+                                                            </a>
+                                                    </div>  
+                                                    </div>
+                                           
+                                                </div>                              
+                                                <div class="col-12 col-lg-6 h-100 mt-3 js-tilt" style="background-image: url(./src/assets/desktop_background.png); background-position: right; background-repeat: no-repeat;">
+                                                    <div class="row">
+                                                        <div class="col-12 h5 text-dark mb-4">
+                                                           
+                                                        </div>
+                                                    </div>
+
+                                                </div>                                                 
                                             </div>
-                                        </a>
-                                        <a class="col-12 text-decoration-none pt-1 pb-1 mb-4 cursor-pointer eHoverRec" href="http://styleguide.co.kr/content/color/system-color.php" target="_blank">
-                                            <div class="row">
-                                                <div class="col-12 h5 text-dark font-weight-bolder">
-                                                    시스템 컬러란
-                                                </div>
-                                                <div class="col-12 text-body font-14">
-                                                    시스템 컬러의 의미해석
-                                                </div>                                        
-                                            </div>
-                                        </a>
-                                        <a class="col-12 text-decoration-none pt-1 pb-1 mb-4 cursor-pointer eHoverRec" href="https://story.pxd.co.kr/1470" target="_blank">
-                                            <div class="row">
-                                                <div class="col-12 h5 text-dark font-weight-bolder">
-                                                    디자인 시스템 7편
-                                                </div>
-                                                <div class="col-12 text-body font-14">
-                                                    컴포넌트를 디자인할 때 고려해야 할 것들
-                                                </div>                                        
-                                            </div>
-                                        </a>
-                                        <a class="col-12 text-decoration-none pt-1 pb-1 mb-4 cursor-pointer eHoverRec" href="https://brunch.co.kr/@blackindigo-red/8" target="_blank">
-                                            <div class="row">
-                                                <div class="col-12 h5 text-dark font-weight-bolder">
-                                                    8-Ponit 그리드 시스템
-                                                </div>
-                                                <div class="col-12 text-body font-14">
-                                                    패딩과 컴포넌트 사이의 간격 - 얼마나 좋을까?
-                                                </div>                                        
-                                            </div>
-                                        </a>
+                                        </div>
+
                                     </div>
-                                </div> 
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="w-100 panel" >
+                            <div class="w-100 h-100 d-flex align-items-stretch justify-content-center flex-wrap" >
+                                <div class="col-12 h-100 mx-auto pt--8 process-con eLinkWrap">
+                                    <div class="row h-100 justify-content-center">
+                                        <div class="col-12 h-100 ">
+                                            <div class="row h-100 align-items-stretch">
+                                                <div class="col-12 col-lg-5 offset-md-1 ef-btn-rotate">
+                                                    <div class="row">
+                                                        <div class="col-auto mb-4">
+                                                            <span class="font--3 text-black bold pb-2 d-inline-block" lang="en">Flexible UI</span>                         
+                                                        </div>
+                                                        <div class="col-12 h5 text-ink font-weight-lighter mb-5">
+                                                            사용자를 원하는 방향으로 유도할 수 있는 UI를 추구합니다.
+                                                            부트스트랩, SCSS를 사용합니다.
+                                                        </div>
+                                                        <div class="w-100"></div>
+                                                        <div class="col-auto">
+                                                            <a class="font-weight-bolder" href="https://www.fssuniverse.com/" target="_blank">
+                                                                <span class="text">
+                                                                    반응형 코딩 웹페이지 <i class="fal fa-external-link-square"></i></span>
+                                                                <svg>
+                                                                    <rect x="4" y="4" rx="0" ry="0" ></rect>
+                                                                </svg>
+                                                                <svg class="svg2">
+                                                                    <rect x="4" y="4" rx="0" ry="0"></rect>
+                                                                </svg>
+                                                            </a>
+                                                    </div>  
+                                                    </div>
+                                           
+                                                </div>                              
+                                                <div class="col-12 col-lg-6 h-100 mt-3 js-tilt" style="background-image: url(./src/assets/desktop_background.png); background-position: right; background-repeat: no-repeat;">
+                                                    <div class="row">
+                                                        <div class="col-12 h5 text-dark mb-4">
+                                                           
+                                                        </div>
+                                                    </div>
+
+                                                </div>                                                 
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="w-100 panel" >
+                            <div class="w-100 h-100 d-flex align-items-stretch justify-content-center flex-wrap" >
+                                <div class="col-12 h-100 mx-auto pt--8 process-con eLinkWrap">
+                                    <div class="row h-100 justify-content-center">
+                                        <div class="col-12 h-100 ">
+                                            <div class="row h-100 align-items-stretch">
+                                                <div class="col-12 col-lg-5 offset-md-1 ef-btn-rotate">
+                                                    <div class="row">
+                                                        <div class="col-auto mb-4">
+                                                            <span class="font--3 text-black bold pb-2 d-inline-block" lang="en">I Love Javascript</span>                         
+                                                        </div>
+                                                        <div class="col-12 h5 text-ink font-weight-lighter mb-5">
+                                                            제이쿼리와 자바스크립트를 좋아합니다.
+                                                            효율적인 UX를 위해 트윈맥스와 리액트를 실무에 적용하고 있습니다.
+                                                            빠르게 제품화를 하고 개발 프로세스 퀄리티를 높이는 일을 중요하게 생각합니다.
+                                                        </div>
+                                                        <div class="w-100"></div>
+                                                        <div class="col-auto">
+                                                            <a class="font-weight-bolder" href="https://www.fssuniverse.com/" target="_blank">
+                                                                <span class="text">
+                                                                    반응형 코딩 웹페이지 <i class="fal fa-external-link-square"></i></span>
+                                                                <svg>
+                                                                    <rect x="4" y="4" rx="0" ry="0" ></rect>
+                                                                </svg>
+                                                                <svg class="svg2">
+                                                                    <rect x="4" y="4" rx="0" ry="0"></rect>
+                                                                </svg>
+                                                            </a>
+                                                    </div>  
+                                                    </div>
+                                           
+                                                </div>                              
+                                                <div class="col-12 col-lg-6 h-100 mt-3 js-tilt" style="background-image: url(./src/assets/desktop_background.png); background-position: right; background-repeat: no-repeat;">
+                                                    <div class="row">
+                                                        <div class="col-12 h5 text-dark mb-4">
+                                                           
+                                                        </div>
+                                                    </div>
+
+                                                </div>                                                 
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- //UX에 관한 글 -->
+                <!-- //디자인 과정 -->
                 <!-- 함께한 곳 -->
-                <div class="col-12 bg-mark-dark jSection" id="career" data-name="career">
+                <div class="col-12 bg-indigo-500" id="career" data-name="career">
                     <div class="row">
-                        <div class="col-12 col-lg-7 position-sticky" style="top: 0px;bottom: auto;z-index: 80;">
-                            <div class="row mr-md-4 position-sticky overflow-hidden" style="top: 0px;bottom: auto;">
+                        <div class="col-12 col-lg-7 overflow-hidden career-imgWrap">
+                            <div class="row fixed" style="top: 0px; bottom: auto; z-index: 70;">
                                 <img class="w-100 career-img career-img1 visible" src="./src/images/razor_design_story_3.png">
                                 <img class="w-100 career-img career-img2 absolute" src="./src/images/razor_design_story_2.png">
                                 <img class="w-100 career-img career-img3 absolute" src="./src/images/razor_design_story_1.png">
                             </div>
                         </div>
-                        <div class="col-12 col-lg-5 pt--5">
+                        <div class="col-12 col-lg-5">
                             <div class="row h-100 flex-row align-self-stretch">
                                 <!-- 프로그레스 -->
-                                <div class="bg-white-lighter positon-relative d-none d-md-block" style="width: 1px; height: 920px; margin-top: 16rem;margin-bottom: auto;">
+                                <div class="bg-white-lighter ml--3 positon-relative d-none d-md-block" style="width: 1px; height: 935px; margin-top: 16rem;margin-bottom: auto;">
                                     <div class="bg-white-500 w-100 position-absolute career-scrollBar">
                                     </div>
                                     <div class="career-scrollWrap" style="top: 0px">
-                                        <span class="career-scroll career-scroll1"></span><span class="text-white career-text career-text1">(주)에프에스에스</span> 
+                                        <span class="career-scroll career-scroll1"></span><span class="career-text career-text1">(주)에프에스에스</span> 
                                     </div>
-                                    <div class="career-scrollWrap" style="top: 500px">
-                                        <span class="career-scroll career-scroll2"></span><span class="text-white career-text career-text2">(주)시큐브</span> 
+                                    <div class="career-scrollWrap" style="top: 493px">
+                                        <span class="career-scroll career-scroll2"></span><span class="career-text career-text2">(주)시큐브</span> 
                                     </div>
                                     <div class="career-scrollWrap" style="bottom: 0px">
-                                        <span class="career-scroll career-scroll3"></span><span class="text-white career-text">(주)사이냅소프트</span> 
+                                        <span class="career-scroll career-scroll3"></span><span class="career-text">(주)사이냅소프트</span> 
                                     </div>
                                 </div>
                                 <!-- //프로그레스 -->
                                 <div class="col">
-                                    <div class="row line-height-175" style="max-width: 440px;">
-                                        <div class="col-12 mt--150 mb--150 career-con1">
+                                    <div class="row" style="max-width: 440px;">
+                                        <div class="col-12 mt--16 mb--16 career-con1">
                                             <div class="row">
-                                                <div class="col-12 h2 text-light line-height-13 mt--4 pb-4" >
+                                                <div class="col-12 h2 text-white line-height-13 mt--3 pb-4" >
                                                     <span class="font-weight-bolder">네이버 풀필먼트 파트너사,</span><br/>    
                                                     에프에스에스
                                                 </div>
-                                                <div class="col-12 col-md-9 text-white-lighter">
-                                                    물류의 복잡하고 번거로운 업무를 대신하는 서비스입니다. 맡긴 상품의 상태를 한 눈에 볼 수 있는 FMS (온라인 풀필먼트 시스템)을 제공한다.
+                                                <div class="col-12 text-white-lighter line-height-175">
+                                                    물류의 복잡하고 번거로운 업무를 대신하는 서비스입니다.<br class="d-none d-md-block" /> 맡긴 상품의 상태를 한 눈에 볼 수 있는 FMS (온라인 풀필먼트 시스템)을 제공한다.
                                                 </div>                                                
                                             </div>
                                         </div>
-                                        <div class="col-12 mb--150 career-con2">
+                                        <div class="col-12 mb--16 career-con2">
                                             <div class="row">
-                                                <div class="col-12 h2 text-light line-height-13 mt--4 pb-4">
+                                                <div class="col-12 h2 text-white line-height-13 mt--3 pb-4">
                                                     <span class="font-weight-bolder">서버 보안 시장 1위,</span><br/>    
-                                                    시큐브                                             
+                                                    시큐브 
                                                 </div>
-                                                <div class="col-12 col-md-10 text-white-lighter">
+                                                <div class="col-12 text-white-lighter line-height-175">
                                                     2011년 코스닥에 상장된 이후, 다수의 인증을 획득하여 기술력을 검증받았으며, 국내 공공, 국방, 금융, 기업 분야 서버보안 시장점유율 1위를 유지하고 있습니다.  
                                                 </div>                                                
                                             </div>
                                         </div>
-                                        <div class="col-12 mb--150 career-con3">
+                                        <div class="col-12 mb--16 career-con3">
                                             <div class="row">
-                                                <div class="col-12 h2 text-light line-height-13 pb-4">
+                                                <div class="col-12 h2 text-white line-height-13 pb-4">
                                                     <span class="font-weight-bolder">네이버 오피스 파트너사,</span><br/>    
                                                     사이냅소프트
                                                 </div>
-                                                <div class="col-12 col-md-10 text-white-lighter">
+                                                <div class="col-12 text-white-lighter line-height-175">
                                                     2000년 세계에서 인정받는 대한민국 SW를 만들자는
-목표를 가지고 출발한 국내 전자문서 시장 점유율 1위 기업입니다.
+목표를 가지고 출발한 국내 전자문서 시장 점유율 1위 기업이며, 네이버 오피스 개발사 입니다.
                                                 </div>                                                
                                             </div>
                                         </div>
@@ -346,146 +304,349 @@
                 </div>  
                 <!-- 함께한 곳 -->
                 <!-- 함께한 일 -->
-                <div class="col-12 mx-auto pt-md--4 pb--75 js-bgChange jSection" id="portfolio" data-name="portfolio">
-                    <div class="row">
-                        <div class="col-12 offset-lg-1 col-lg-3 h2 text-dark letter-spacing-1 mr-auto sider" style="top:0px; line-height: 1.3;z-index: 80;" >
-                            <div class="row h-100 align-items-center">
-                                <div class="col-12 pt--75 text-center-sm">
-                                    함께 <span class="font-weight-bolder">고민하고</span><br/>
-                                    함께 <span class="font-weight-bolder">만들어갑니다</span>                                    
-                                </div>
-                            </div>
-                        </div>                    
-                        <div class="col-12 col-lg-8 ml-auto">
+                <div class="col-12 pb--6" style="background: linear-gradient(to bottom, rgba(249, 249, 249, 1), rgba(249,249,249,58%) 58%, rgba(249,249,249,0%) 100%);" id="portfolio" data-name="portfolio">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-10 pt--6">
                             <div class="row">
-                                <div class="col-12 col-md-6 portfolio-con">
-                                    <div class="row">
-                                        <div class="col-11 mx-auto rounded-20 shadow shadow-hover-brand cursor-pointer mt-4 portfolio-img" style="background-image: url(./src/images/thumbnail-fssdesign.png);">
+                                <div class="col-12 col-lg-4 pb--3 sider" style="top:0px; z-index: 80;" >
+                                    <div class="row ">
+                                        <div class="col-12 col-lg-auto text-center text-left-lg">
                                             <div class="row">
-                                                <div class="bg-dim rounded-20 ">
+                                                <div class="col-auto mb-4">
+                                                    <span class="font--3 text-black bold pb-2 d-inline-block" lang="en">My portfolio</span>                         
                                                 </div>
-                                                <a class="col-12 text-decoration-none positon-absolute portfolio-link" style="top: 0px; bottom: 0px;z-index: 80;" href="https://dukza.github.io/fssdesign/" target="_blank">
-                                                    <div class="row h-100 align-items-center justify-content-center">
-                                                        <div class="col-12 text-center portfolio-title">
-                                                            <div class="row">
-                                                                <div class="col-12 text-center pb-2 portfolio-tag">
-                                                                    <span class="font-11 text-mark d-inline-block rounded-pill p-1 px-2">#100%작업</span>
-                                                                    <span class="font-11 text-mark d-inline-block rounded-pill p-1 px-2">#리액트</span>
-                                                                    <span class="font-11 text-mark d-inline-block rounded-pill p-1 px-2">#디자인 시스템</span>
-                                                                    <span class="font-11 text-mark d-inline-block rounded-pill p-1 px-2">#반응형</span>
-                                                                </div>
-                                                                <div class="col-12 h2 bold mb-4" lang="en">
-                                                                    FSS Design System
-                                                                </div>  
-                                                                <div class="col-12 portfolio-desc mb-4">
-                                                                <div class="row">
-                                                                    <div class="col-12 font-14">
-                                                                        서로 일하는 분야는 다르지만 사용자를 위한 마음만은 같은<br/> FSS의 UX 언어가 담긴 디자인 시스템 입니다. 리액트로 작업되었습니다.
-                                                                    </div>                                        
-                                                                </div>
-                                                                </div>  
-                                                                <div class="col-auto mx-auto px-0 small eLink" lang="en">
-                                                                    more <i class="fal fa-external-link"></i>
-                                                                </div>                                                                     
-                                                            </div>
-                                                        </div>
-      
-                                                    </div>
-
-                                                </a>
-
+                                                <div class="col-12 h5 text-ink font-weight-lighter mb-5">
+                                                    서비스의 맥락을 이해하고 동료들과 함께 고민하고 함께 만들어갑니다.
+                                                </div>                  
                                             </div>
+                                    
                                         </div>
                                     </div>
-                                </div>                                
-                                <div class="col-12 col-md-6 portfolio-con portfolio-con1 ePortfolio-con">
+                                </div>                    
+                                <div class="col-12 col-lg-8">
                                     <div class="row">
-                                        <div class="col-11 mx-auto rounded-20 shadow shadow-hover-brand cursor-pointer mt-4 portfolio-img" style="background-image: url(./src/images/thumbnail-fssdesign.png);">
-                                            <div class="row">
-                                                <div class="bg-dim rounded-20 ">
-                                                </div>
-                                                <a class="col-12 text-decoration-none positon-absolute portfolio-link" style="top: 0px; bottom: 0px;z-index: 80;" href="https://dukza.github.io/fssdesign/" target="_blank">
-                                                    <div class="row h-100 align-items-center justify-content-center">
-                                                        <div class="col-12 text-center portfolio-title">
+                                        <div class="col-12 portfolio-grid">
+                                            <div class="portfolio-con">
+                                                <div class="col-12 portfolio-img">
+                                                    <div class="row w-100 h-100 text-center positon-absolute align-items-center">
+                                                        <div class="col-12">
                                                             <div class="row">
-                                                                <div class="col-12 text-center pb-2 portfolio-tag">
-                                                                    <span class="font-11 text-mark d-inline-block rounded-pill p-1 px-2">#100%작업</span>
-                                                                    <span class="font-11 text-mark d-inline-block rounded-pill p-1 px-2">#리액트</span>
-                                                                    <span class="font-11 text-mark d-inline-block rounded-pill p-1 px-2">#디자인 시스템</span>
-                                                                    <span class="font-11 text-mark d-inline-block rounded-pill p-1 px-2">#반응형</span>
+                                                                <div class="col-12 h3 text-white bold mb-2 title" lang="en">
+                                                                    <span class="text">My Portfolio</span>
+                                                                </div>                     
+                                                                <div class="col-12 font-12 text-white-lighter font-weight-bold mb--3 tagWrap">
+                                                                    <div class="text">
+                                                                        <span class="tag">#100%작업</span>
+                                                                        <span class="tag">#tweenMax</span>
+                                                                        <span class="tag">#jQuery</span>
+                                                                        <span class="tag">#반응형</span>        
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col-12 h2 bold mb-4" lang="en">
-                                                                    FMS Dashboard
-                                                                </div>  
-                                                                <div class="col-12 portfolio-desc mb-4">
-                                                                <div class="row">
-                                                                    <div class="col-12 font-14">
-                                                                        서로 일하는 분야는 다르지만 사용자를 위한 마음만은 같은<br/> FSS의 UX 언어가 담긴 디자인 시스템 입니다. 리액트로 작업되었습니다.
-                                                                    </div>                                        
-                                                                </div>
-                                                                </div>  
-                                                                <div class="col-auto mx-auto px-0 small eLink" lang="en">
-                                                                    more <i class="fal fa-external-link"></i>
-                                                                </div>                                                                     
+                                                                <div class="col-12 more eLinkWrap">
+                                                                    <a class="text-white-lighter font-12 bold cursor-pointer eLink" href="https://www.figma.com/file/pjRlh1DjEYlYVlJtI0vOmo/portfolio" target="_blank" lang="en">VIEW MORE</a>        
+                                                                </div>                            
                                                             </div>
                                                         </div>
-      
+                                                        <div class="w-100 h-100 bg" style="background-image: url(./src/images/portfolio-01.png);">
+                                                        </div>
                                                     </div>
-
-                                                </a>
-
+                                                </div>   
+                                                <div class="col-12 p-4 portfolio-text">
+                                                    <div class="row">
+                                                        <div class="col-12 text-dark font-weight-bold">
+                                                            포트폴리오
+                                                        </div>
+                                                        <div class="col-12 mt-2">
+                                                            최소한의 디자인으로 효율적인 UX를 구현에 집중하여 제작했습니다. 앞으로도 끊임 없는 개선을 기대해 주세요.
+                                                        </div>
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                            <div class="portfolio-con">
+                                                <div class="col-12 portfolio-img">
+                                                    <div class="row w-100 h-100 text-center positon-absolute align-items-center">
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                <div class="col-12 h3 text-white bold mb-2 title" lang="en">
+                                                                    <span class="text">FSS Design System</span>
+                                                                </div>                     
+                                                                <div class="col-12 font-12 text-white-lighter font-weight-bold mb--3 tagWrap">
+                                                                    <div class="text">
+                                                                        <span class="tag">#100%작업</span>
+                                                                        <span class="tag">#리액트</span>
+                                                                        <span class="tag">#디자인 시스템</span>
+                                                                        <span class="tag">#반응형</span>        
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 more eLinkWrap">
+                                                                    <a class="text-white-lighter font-12 bold cursor-pointer eLink" href="https://dukza.github.io/color" target="_blank" lang="en">VIEW MORE</a>        
+                                                                </div>                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 h-100 bg" style="background-image: url(./src/images/portfolio-02.png);">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 p-4 portfolio-text">
+                                                    <div class="row">
+                                                        <div class="col-12 text-dark font-weight-bold">
+                                                            디자인 시스템
+                                                        </div>
+                                                        <div class="col-12 mt-2">
+                                                            서로 일하는 분야는 다르지만 사용자를 위한 마음만은 같은 FSS의 UX 언어가 담긴 디자인 시스템 입니다. 
+                                                        </div>
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                            <div class="portfolio-con">
+                                                <div class="col-12 portfolio-img">
+                                                    <div class="row w-100 h-100 text-center positon-absolute align-items-center">
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                <div class="col-12 h3 text-white bold mb-2 title" lang="en">
+                                                                    <span class="text">Naver Office</span>
+                                                                </div>                     
+                                                                <div class="col-12 font-12 text-white-lighter font-weight-bold mb--3 tagWrap">
+                                                                    <div class="text">
+                                                                        <span class="tag">#50%기획</span>
+                                                                        <span class="tag">#70%디자인</span>
+                                                                        <span class="tag">#Html</span>         
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 more eLinkWrap">
+                                                                    <a class="text-white-lighter font-12 bold cursor-pointer eLink" href="./src/assets/Webmail.pdf" target="_blank" lang="en">VIEW MORE</a>        
+                                                                </div>                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 h-100 bg" style="background-image: url(./src/images/portfolio-03.png);">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 p-4 portfolio-text">
+                                                    <div class="row">
+                                                        <div class="col-12 text-dark font-weight-bold">
+                                                            네이버 오피스
+                                                        </div>
+                                                        <div class="col-12 mt-2">
+                                                            네이버 오피스 워드, 슬라이드, 셀, 폼 내부 UI 디자인을 진행하였습니다. 오피스 제품중 웹메일의 기획서를 링크 하였습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                            <div class="portfolio-con">
+                                                <div class="col-12 portfolio-img">
+                                                    <div class="row w-100 h-100 text-center positon-absolute align-items-center">
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                <div class="col-12 h3 text-white bold mb-2 title" lang="en">
+                                                                    <span class="text">Fullfillment App</span>
+                                                                </div>                     
+                                                                <div class="col-12 font-12 text-white-lighter font-weight-bold mb--3 tagWrap">
+                                                                    <div class="text">
+                                                                        <span class="tag">#100%디자인</span>      
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 more">
+                                                                    <span class="text-white-lighter font-12 bold "lang="en">Coming soon</span>        
+                                                                </div>                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 h-100 bg" style="background-image: url(./src/images/portfolio-04.png);">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 p-4 portfolio-text">
+                                                    <div class="row">
+                                                        <div class="col-12 text-dark font-weight-bold">
+                                                            FSS App
+                                                        </div>
+                                                        <div class="col-12 mt-2">
+                                                            물류의 복잡하고 번거로운 업무를 대신하는 서비스 앱입니다. 제작 중 입니다.
+                                                        </div>
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                            <div class="portfolio-con js-bgChange">
+                                                <div class="col-12 portfolio-img">
+                                                    <div class="row w-100 h-100 text-center positon-absolute align-items-center">
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                <div class="col-12 h3 text-white bold mb-2 title" lang="en">
+                                                                    <span class="text">Incheon Airport</span>
+                                                                </div>                     
+                                                                <div class="col-12 font-12 text-white-lighter font-weight-bold mb--3 tagWrap">
+                                                                    <div class="text">
+                                                                        <span class="tag">#100%기획</span>
+                                                                        <span class="tag">#100%디자인</span>      
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 more eLinkWrap">
+                                                                    <a class="text-white-lighter font-12 bold cursor-pointer eLink" href="./src/assets/Webmail.pdf" target="_blank" lang="en">VIEW MORE</a>        
+                                                                </div>                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 h-100 bg" style="background-image: url(./src/images/portfolio-05.png);">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 p-4 portfolio-text">
+                                                    <div class="row">
+                                                        <div class="col-12 text-dark font-weight-bold">
+                                                            인천공항 가이드
+                                                        </div>
+                                                        <div class="col-12 mt-2">
+                                                            인천공항 가이드 앱의 실내 위치 찾기 서비스 앱 UI 입니다.
+                                                        </div>
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                            <div class="portfolio-con">
+                                                <div class="col-12 portfolio-img">
+                                                    <div class="row w-100 h-100 text-center positon-absolute align-items-center">
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                <div class="col-12 h3 text-white bold mb-2 title" lang="en">
+                                                                    <span class="text">Server dashboard</span>
+                                                                </div>                     
+                                                                <div class="col-12 font-12 text-white-lighter font-weight-bold mb--3 tagWrap">
+                                                                    <div class="text">
+                                                                        <span class="tag">#기획 100%</span>
+                                                                        <span class="tag">#디자인 100%</span>
+                                                                        <span class="tag">#Html 100%</span>         
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 more eLinkWrap">
+                                                                    <a class="text-white-lighter font-12 bold cursor-pointer eLink" href="http://dyha.cafe24.com/dy/2016/hdaas/php/dashboard-v1.php" target="_blank" lang="en">VIEW MORE</a>        
+                                                                </div>                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 h-100 bg" style="background-image: url(./src/images/portfolio-06.png);">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 p-4 portfolio-text">
+                                                    <div class="row">
+                                                        <div class="col-12 text-dark font-weight-bold">
+                                                            서버 가상화 솔루션
+                                                        </div>
+                                                        <div class="col-12 mt-2">
+                                                            업무용 공간과 인터넷 공간을 분리하여 위험요소를 근본적으로 차단하는 데스크톱 가상화 솔루션 HDass의 대시보드 UI 입니다.
+                                                        </div>
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                            <div class="portfolio-con">
+                                                <div class="col-12 portfolio-img">
+                                                    <div class="row w-100 h-100 text-center positon-absolute align-items-center">
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                <div class="col-12 h3 text-white bold mb-2 title" lang="en">
+                                                                    <span class="text">Airbeacon dashboard</span>
+                                                                </div>                     
+                                                                <div class="col-12 font-12 text-white-lighter font-weight-bold mb--3 tagWrap">
+                                                                    <div class="text">
+                                                                        <span class="tag">#기획 100%</span>
+                                                                        <span class="tag">#디자인 100%</span>
+                                                                        <span class="tag">#Html 100%</span>         
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 more eLinkWrap">
+                                                                    <a class="text-white-lighter font-12 bold cursor-pointer eLink" href="http://dyha.cafe24.com/dy/coordi/airbeacon/dashBoardList.html#" target="_blank" lang="en">VIEW MORE</a>        
+                                                                </div>                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 h-100 bg" style="background-image: url(./src/images/portfolio-07.png);">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 p-4 portfolio-text">
+                                                    <div class="row">
+                                                        <div class="col-12 text-dark font-weight-bold">
+                                                            하나의 코드로 스타일만 다르게
+                                                        </div>
+                                                        <div class="col-12 mt-2">
+                                                            가상 비콘으로 위치를 추적하는 에어비콘 솔루션 대시보드 입니다. 하나의 코드지만 스타일 시트만으로 브랜드에 맞춰 디자인 합니다.
+                                                        </div>
+                                                    </div>
+                                                </div>                                
+                                            </div>
+                                            <div class="portfolio-con">
+                                                <div class="col-12 portfolio-img">
+                                                    <div class="row w-100 h-100 text-center positon-absolute align-items-center">
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                <div class="col-12 h3 text-white bold mb-2 title" lang="en">
+                                                                    <span class="text">FSS Homepage</span>
+                                                                </div>                     
+                                                                <div class="col-12 font-12 text-white-lighter font-weight-bold mb--3 tagWrap">
+                                                                    <div class="text">
+                                                                        <span class="tag">#디자인 30%</span>
+                                                                        <span class="tag">#Html 100%</span>  
+                                                                        <span class="tag">#반응형</span>         
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 more eLinkWrap">
+                                                                    <a class="text-white-lighter font-12 cursor-pointer bold eLink" href="https://www.fssuniverse.com/" target="_blank" lang="en">VIEW MORE</a>        
+                                                                </div>                            
+                                                            </div>
+                                                        </div>
+                                                        <div class="w-100 h-100 bg" style="background-image: url(./src/images/portfolio-08.png);">
+                                                        </div>
+                                                    </div>
+                                                </div>   
+                                                <div class="col-12 p-4 portfolio-text">
+                                                    <div class="row">
+                                                        <div class="col-12 text-dark font-weight-bold">
+                                                            반응형 HTML5
+                                                        </div>
+                                                        <div class="col-12 mt-2">
+                                                            물류의 복잡하고 번거로운 업무를 대신하는 서비스 입니다. 부트스트랩과 SCSS, jQuery를 이용해 제작 되었습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>   
-                                <div class="col-12 col-md-6 portfolio-con portfolio-con2 ePortfolio-con">
-                                    <div class="row">
-                                        <div class="col-11 mx-auto bg-light rounded-20" style="min-height: 50vh;">
-                                            <div class="row">
-                                                <div class="col-12 pt-3 pb-5">
-                                                    <span class="font-11 text-mark bg-white d-inline-block rounded-pill p-1 px-2">#100%작업</span>
-                                                    <span class="font-11 text-mark bg-white d-inline-block rounded-pill p-1 px-2">#리액트</span>
-                                                    <span class="font-11 text-mark bg-white d-inline-block rounded-pill p-1 px-2">#디자인 시스템</span>
-                                                    <span class="font-11 text-mark bg-white d-inline-block rounded-pill p-1 px-2">#반응형</span>
-                                                </div>
-                                                <div class="col-12">
-
-                                                </div>
-                                                <div class="col-12 text-dark font-weight-bolder">
-                                                    디자인 시스템
-                                                </div>
-                                                <div class="col-12 font-14">
-                                                    서로 일하는 분야는 다르지만 사용자를 위한 마음만은 같은 FSS의 UX 언어가 담긴 디자인 시스템 페이지 입니다. 리액트로 작업되었습니다.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6"></div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
-                </div>
+                </div>         
                 <!-- 함께한 일 -->
                 <!-- 이전 포폴 -->
-                <div class="col-12 pt--4 pb-4" >
+                <div class="col-12 pt--6 pb--6" id="other">
                     <div class="row justify-content-center">
-                        <div class="col-auto h2 text-white text-center mt-7">
-                            예전 포트폴리오도 구경하실래요?
+                        <div class="col-12 h2 text-white text-center mb-5">
+                            예전 포트폴리오 구경하실래요?
                         </div>
-                        <div class="w-100"></div>
-                        <div class="col-auto mt-4">
-                           <a class="btn btn-light text-mark-dark rounded-pill pt-3 pb-3 px-5 cursor-pointer btn-review js-slider" role="button" data-target="review"  href="http://dyha.cafe24.com/dy/hello/html/main.html" target="_blank">예전 포폴 보러 가기</a>
+                        <div class="col-12 mb-5">
+                            <div class="row ef-btn-rotate">
+                                <div class="col-auto mx-auto">
+                                    <a class="font-weight-bolder" href="http://dyha.cafe24.com/dy/hello/html/main.html" target="_blank">
+                                        <span class="text">
+                                            예전 포폴 보러 가기
+                                        </span>
+                                        <svg>
+                                            <rect x="4" y="4" rx="0" ></rect>
+                                        </svg>
+                                        <svg class="svg2">
+                                            <rect x="4" y="4" rx="0"></rect>
+                                        </svg>
+                                        
+                                    </a>
+                                </div>                                
+                            </div>
                         </div>
+
+                        <div class="col-12 font-10 text-center" lang="en">
+                            © 2020, doyo Design.
+                        </div>                        
                     </div>
-                </div>
-                <div class="col-12 text-white-light text-center small pb--75">
-                    © 2020, doyo Design.
                 </div>
                 <!-- 이전 포폴 -->
             </div>
         </div>
-        <!-- <script src="./src/tilt.js"></script> -->
+        <script src="./src/tilt.js"></script>
     </body>
 </html>
 <script>

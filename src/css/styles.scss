@@ -2,7 +2,8 @@
 @import url(all.css);
 @import url(./../icomoon-hp/style.css);
 @import url(bootstrap.min.css);
-@import url('./SpoqaHanSans-kr.css');
+@import url(./SpoqaHanSans-kr.css);
+@import url(./SpoqaHanSans-jp.css);
 @import url('./../webfonts/samsung/style.css');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
@@ -15,12 +16,15 @@ body{
 	color: $color-body !important;
 	line-height: 1.5;
 	transition: all 2s;
-	background-color: transparent;
 }
 
 .bg-change{
 	body{
-		background-color: $color-mark !important;
+		background-color: $color-indigo-500 !important;
+		color: $color-white !important;
+		.text-dark,.text-ink{
+			color: $color-white !important;	
+		}
 	}
 }
 [lang="en"]{
@@ -72,13 +76,16 @@ body{
 }
 
 .font{
+	&--5{
+		font-size: 5rem;
+	}	
 	&--4{
-		font-size: 2rem;
-		transition: all .4s;
+		font-size: 3.5rem;
 	}
 	&--3{
-		font-size: 1.5rem;
+		font-size: 2rem;
 	}
+
 	&-emoji{
 		font-family: Segoe UI Emoji;
 	}
@@ -89,9 +96,8 @@ body{
 	&-12{
 		font-size: 12px !important;
 	}
-	&-11{
-		font-size: 11px !important;
-		font-weight: bolder;
+	&-10{
+		font-size: 10px !important;
 	}
 	&-small{
 		font-size: 0.87rem !important;
@@ -104,29 +110,32 @@ body{
 	}
 }
 
-.h{
-	&1,h1{
-		font-size: 2rem !important;
-	}
-	&2,h2{
-		font-size: 1.75rem !important;
-	}
-	&3,h3{
-		font-size: 1.5rem !important;
-	}
-	&4,h4{
-		font-size: 1.25rem !important;
-	} 
-	&5,h5{
-		font-size: 1rem !important;
-	}	
-}
+// .h{
+// 	&1,h1{
+// 		font-size: 2rem !important;
+// 	}
+// 	&2,h2{
+// 		font-size: 1.75rem !important;
+// 	}
+// 	&3,h3{
+// 		font-size: 1.5rem !important;
+// 	}
+// 	&4,h4{
+// 		font-size: 1.25rem !important;
+// 	} 
+// 	&5,h5{
+// 		font-size: 1rem !important;
+// 	}	
+// }
 
 //텍스트
 //텍스트
 .text{
 	&-indigo-500{
 		color: $color-indigo-500;
+		&:hover{
+			color: $color-indigo-500;
+		}
 	}
 	&-black{
 		color: $color-black !important;
@@ -135,7 +144,7 @@ body{
 		color: $color-white !important;
 	}	
 	&-white-lighter{
-		color: transparentize($color-white, .2) !important;
+		color: transparentize($color-white, .3) !important;
 	}	
 	&-white-light{
 		color: transparentize($color-white, .5) !important;
@@ -227,8 +236,8 @@ body{
 	&-white-gra{
 		background: linear-gradient(to top, rgba(255,255,255, 1), rgba(255,255,255,.6) 70%, rgba(255,255,255,0));
 	}	
-	&-darken{
-		background-color: $color-darken !important;
+	&-dark-ink{
+		background-color: $color-dark-ink !important;
 	}
 	&-dark-gra{
 		background: linear-gradient(to top, rgba(0,0,0, .6), rgba(0,0,0,.1) 70%, rgba(0,0,0,0));
@@ -358,7 +367,7 @@ body{
 .border{
 	border:1px solid #E0E0E0 !important;
 	&-darken{
-		border:1px solid $color-darken !important;
+		border:1px solid $color-dark !important;
 	}
 	&-bottom{
 		border-bottom: 1px solid #E0E0E0 !important;
@@ -375,7 +384,7 @@ body{
 .border{
 	border:1px solid #E0E0E0 !important;
 	&-darken{
-		border:1px solid $color-darken !important;
+		border:1px solid $color-dark !important;
 	}
 	&-bottom{
 		border-bottom: 1px solid #E0E0E0 !important;
@@ -537,25 +546,48 @@ $spacer7:$spacer*4;
 
 
 .m{
-	&t--4{
-		margin-top: 4rem;
+	&t--3{
+		margin-top: 3rem;
 	}
-	&b--4{
-		margin-bottom: 4rem;
+	&r--3{
+		margin-right: 3rem;
 	}
-	&t--75{
-		margin-top: 7.5rem;
-	}	
-	&b--75{
-		margin-bottom: 7.5rem;
-	}	
-	&t--150{
-		margin-top: 15rem;
-	}	
-	&b--150{
-		margin-bottom: 15rem;
+	&b--3{
+		margin-bottom: 3rem;
 	}
-
+	&l--3{
+		margin-left: 3rem;
+	}
+	&t--6{
+		margin-top: 6rem;
+	}	
+	&b--6{
+		margin-bottom: 6rem;
+	}	
+	&t--8{
+		margin-top: 8rem;
+	}	
+	&b--8{
+		margin-bottom: 8rem;
+	}	
+	&t--12{
+		margin-top: 12rem;
+	}	
+	&b--12{
+		margin-bottom: 12rem;
+	}
+	&t--14{
+		margin-top: 14rem;
+	}	
+	&b--14{
+		margin-bottom: 14rem;
+	}
+	&t--16{
+		margin-top: 16rem;
+	}	
+	&b--16{
+		margin-bottom: 16rem;
+	}
 }
 //모바일
 @media (max-width: 576px){
@@ -577,13 +609,30 @@ $spacer7:$spacer*4;
 	html{
 		font-size: 16px;
 	}
+	.font{
+		&--75{
+			font-size: 7.5rem;
+		}
+		&--4{
+			font-size: 4rem;
+		}
+		&--3{
+			font-size: 3rem;
+		}	
+	}
 	.p{
 		&b-md--4{
 			padding-bottom: 4rem;
 		}
 		&t-md--4{
 			padding-top: 4rem;
-		}			
+		}
+		&t-md--75{
+			padding-top: 7.5rem;
+		}
+		&t-md--150{
+			padding-top: 15rem;
+		}					
 	}
 	.m{
 		&t-md--150{
@@ -591,6 +640,9 @@ $spacer7:$spacer*4;
 		}
 		&b-md--150{
 			margin-bottom: 15rem;
+		}
+		&t-md--4{
+			margin-top: 4rem;
 		}
 	}
 	.h{
@@ -613,8 +665,20 @@ $spacer7:$spacer*4;
 			font-size: 1rem !important;
 		}	
 	}
+	// 레이아웃
+	//디자인 과정
+	.process-image{
+		height: 65vh !important;
+	}
 }
-//
+@media (min-width: 960px){
+	.text-left-lg{
+		text-align: left !important;
+	}
+}
+
+
+
 .p{
 	&t--4{
 		padding-top: 4rem;
@@ -628,21 +692,48 @@ $spacer7:$spacer*4;
 	&t--l{
 		padding-left: 4rem;
 	}
+	&t--8{
+		padding-top: 8rem;
+	}
 	&t--75{
 		padding-top: 7.5rem;
 	}	
 	&b--75{
 		padding-bottom: 7.5rem;
 	}	
+	&t--6{
+		padding-top: 6rem;
+	}	
+	&b--6{
+		padding-bottom: 6rem;
+	}	
+	&t--8{
+		padding-top: 8rem;
+	}	
+	&b--8{
+		padding-bottom: 8rem;
+	}	
+	&t--12{
+		padding-top: 12rem;
+	}	
+	&b--12{
+		padding-bottom: 12rem;
+	}
+	&t--14{
+		padding-top: 14rem;
+	}	
+	&b--14{
+		padding-bottom: 14rem;
+	}
 }
 .btn{
 	&-brand-indigo {
 		color: #fff;
-		background-color: $color-mark;
-		border-color: darken($color-mark,5%);
+		background-color: $color-indigo-500;
+		border-color: darken($color-indigo-500,5%);
 		&:hover{
 				color: #fff;
-				background-color: darken($color-mark,3%);
+				background-color: darken($color-indigo-500,3%);
 		}
 	}
 }
@@ -894,17 +985,7 @@ $list-padding-left:1.8rem;
 // 웹
 @media (min-width: 768px){
 
-	.font{
-		&--75{
-			font-size: 7.5rem;
-		}
-		&--4{
-			font-size: 4rem;
-		}
-		&--3{
-			font-size: 3rem;
-		}
-	}
+
 	.list-process{
 		display: flex;
 		flex-direction: row;
@@ -1001,6 +1082,11 @@ $list-padding-left:1.8rem;
 	.text-center-sm{
 		text-align: center !important;
 	}
+	.p{
+		&t-sm--75{
+			padding-top: 7.5rem;
+		}
+	}
 }
 @media (max-width: 960px) {
 	.text-center-lg{
@@ -1013,7 +1099,7 @@ $list-padding-left:1.8rem;
 	transition: all .4s;
 	&:hover{
 		.btn-brand-indigo{
-			box-shadow: 0 1rem 3rem transparentize($color-mark, .6) !important;	
+			box-shadow: 0 1rem 3rem transparentize($color-indigo-500, .6) !important;	
 			transform: translateY(-4px);
 		}
 	}
@@ -1027,7 +1113,7 @@ a.eLink{
 		bottom: 50%;
 		width: 0%;
 		height: 1px;
-		background-color: transparentize($color-mark, 0.4) ;
+		background-color: transparentize($color-indigo-500, 0.4) ;
 	}
 	&:hover{
 		&::before{
@@ -1040,16 +1126,15 @@ a.eLink{
 .eLinkWrap{
 	.eLink{
 		position: relative;
-		
 		&::before{
 			content: '';
-			background-color: transparentize($color-mark, .4);
+			background-color: $color-indigo-500;
 			position: absolute;
-			bottom: 0px;
+			bottom: -4px;
 			left: 0px;
-			width: 0px;
-			height: 1px;
-			transition: width .4s .4s;
+			width: 20%;
+			height: 4px;
+			transition: width .3s;
 		}
 	}
 	&:hover{
@@ -1063,52 +1148,15 @@ a.eLink{
 }
 
 .eDown{
-	.icon{
-		animation: no-transform 2.4s cubic-bezier(0, 0.9, 0.3, 1.2) infinite;	
-	}
+		animation: no-transform 1.8s infinite;	
+		transition:all 1.8s cubic-bezier(.63,0,.29,1);
 }
-
 @keyframes no-transform{
 	100%{
 		opacity: 1;
 		transform: none;
 	}
 }
-
-.iDown{
-	.icon{
-		display: inline-block;
-		position:relative;
-		width: 16px;
-		height: 16px;
-		opacity: 0;
-		transition: all .6s;
-		transform: translateY(-2rem);
-		&::before{
-			content: '';
-			display: inline-block;
-			position:absolute;
-			top: 0px;
-			left: 0px;
-			width: 100%;
-			height: 100%;
-			border-right: 1px solid $color-body;
-			border-bottom: 1px solid $color-body;
-			transform: rotate(45deg);
-		}			
-	}
-
-}
-.iDownWrap{
-	&:hover{
-		.icon{
-			opacity: 1;
-			animation: none;
-			transform: translateY(0rem);			
-		}
-	}		
-}
-
 .eHoverRec{
 	position: relative;
 	
@@ -1119,7 +1167,7 @@ a.eLink{
 		left: 0px;
 		width: 100%;
 		height: 100%;
-		background-color: transparentize($color-mark, .95);
+		background-color: transparentize($color-indigo-500, .95);
 		border-radius: 4px;
 		opacity: 0;
 		transition: all .4s cubic-bezier(0, 0.9, 0.3, 1.2) ;
@@ -1135,32 +1183,54 @@ a.eLink{
 		}	
 	}
 }
+.ef-btn-rotate{
+	a{
+		position: relative;
+		width: 252px;
+		height: 56px;
+		line-height: 56px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		.text{
+			position: relative;
+			z-index: 90;
+			transition: all .3s;
+		}
+		svg{
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			transform: rotateX(180deg);
+			rect{
+				width: 242px;
+				height: 48px;
+				fill-opacity: 0;
+				stroke-width: 4;
+				// stroke-linecap: round;
+				stroke-dasharray: 200;
+				stroke-dashoffset: 10;
+				transform-origin: center;
+				transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s, fill-opacity 0.5s 0.2s;	
+			}
+		}
+		.svg2{
+			transform: rotateY(180deg);
+		}	
 
-.eFadeWrap{
-	perspective: 40rem;	
+	}
+	&:hover{
+		svg{
+			rect {fill-opacity:1;stroke-dasharray:90;stroke-dashoffset:160;}
+		}
+	}	
+
 }
-.carousel1{
-	.eFadeText{
-		opacity: 0;
-		transform: translateZ(6rem);  
-		animation: no-transform 2.4s cubic-bezier(0,0,0,1) forwards;
-	}
-	.eFadeText .eFade {
-		
-		animation: no-transform linear 2.4s forwards;
-		opacity: 0;
-	} 
-	.eFadeText .eFade0 { animation-delay: 0s; opacity: 1;}
-	.eFadeText .eFade1 { animation-delay: 0.6s;}
-	.eFadeText .eFade2 { animation-delay: 1.2s; }
-	.eFadeText .eFade3 { animation-delay: 1.8s; }
-	.eFade4 { opacity: 0; 
-	animation: no-transform linear .8s 3s forwards;
-	}
-	.eFade5 { opacity: 0;
-	animation: no-transform linear .8s 3.6s forwards;
-	}
-}
+
+//아이콘
 .icon-divider-vertical{
 	position: relative;
 	display: inline-block;
@@ -1179,98 +1249,247 @@ a.eLink{
 	}
 }
 // 레이아웃
-
-// 네비게이션
+//네비게이션
+$navBar-height:0px;
 #navBar{
 	position: fixed;
-	height: 60px;
+	// height: $navBar-height;
 	top: 0px;
 	z-index: 90;
-	border-bottom:1px solid $color-light;
+	// border-bottom:1px solid $color-light;
+	// background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(253,253,255,1));
+	// box-shadow: 0 1rem 3rem rgba(255,255,255,.08)!important;
+	mix-blend-mode: difference;
+	color: white;
 	.link{
 		height: 100%;
-		color: $color-ink;
-		text-align: center;
 		cursor: pointer !important;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		transition: all .3s;
+		position: relative;
+		&::before{
+			content: '';
+			display: block;
+			position: absolute;
+			top: -8px;
+			left: 0px;
+			width: 0%;
+			height: 4px;
+			background-color: transparent;
+			transition: all .3s;
+		}		
 	}
-	.active{
-		color:$color-mark;
-		font-weight: bold;
-	}
-	&::after{
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		width: 100%;
-		bottom: 0;
-		content: '';
-		background-color: #fff;
-		// background: linear-gradient(to top, rgba(238,238,239,1), rgba(255,255,255,1));
-		z-index: -1;
+	.active.link{
+		&::before{
+			background-color: $color-indigo-500;
+			width: 100%;
+		}	
 	}
 }
-@media (min-width: 992px){
-	#portfolio{
-		.sider{
-			height: 100vh !important;
-			position: sticky;			
+//디자인 이란
+#designIs{
+	// background: linear-gradient(#fff, #EBEEFF);
+	perspective: 40rem;
+	transform-style: preserve-3d;
+	.carousel1{
+		.ef-fade{
+			opacity: 0;
+			animation: no-transform 1.2s linear  forwards;
 		}
+		.ef-zoomText{
+			transform: translateZ(16rem);  
+			animation: no-transform 2.4s cubic-bezier(0,0,0,1) forwards;
+		}
+		.ef-fade0 { animation-delay: 0s;opacity: 1;}
+		.ef-fade1 { animation-delay: .9s;}
+		.ef-fade2 { animation-delay: 1.8s; }
+		.ef-fade3 { animation-delay: 2.4s;}
+		.ef-fade4 { animation-delay: 3.0s;}
+		.ef-fade5 { animation-delay: 3.0s;}
+		.btn-moreWrap{
+			position: absolute;
+			bottom: 88px;
+			right: 30px;	
+			cursor: pointer;		
+			.btn-more{
+				position: relative;
+				display: inline-block;
+				transform: translateY(-2rem);
+				.text{
+					position: absolute;
+					bottom: 28px;
+					left: 0px;
+					width: 24px;
+					&::before{
+						content: 'View more';
+						display: block;
+						transform:  rotate(-90deg);
+						white-space: nowrap;
+						color: $color-white;
+					}
+				}	
+				.iDown{
+					.icon{
+						display: inline-block;
+						position:relative;
+						width: 24px;
+						height: 24px;					
+						&::before{
+							content: '';
+							display: inline-block;
+							position:absolute;
+							top: 0px;
+							left: 0px;
+							width: 100%;
+							height: 100%;
+							border-right: 1px solid $color-white;
+							border-bottom: 1px solid $color-white;
+							transform: rotate(45deg);
+						}			
+					}
+				
+				}	
+			}
+	
+		}
+		@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,100&display=swap');
+		.object{
+			font-family: 'Josefin Sans', sans-serif;	
+			text-align: center;		
+			position: absolute;
+		}
+	}
+	.ef-btn-rotate{
+		a{
+			.text{
+				color: $color-indigo-500;
+			}
+			svg{
+				rect{
+					fill: $color-indigo-500;
+					stroke: $color-indigo-500;
+				}
+			}
 
-	}
-}
-//디자인은
-.sHelperWrap{
-	&:hover{
-		.sHelper{	
-			opacity: 1;
 		}
-	}
+		&:hover{
+			.text{
+				color: $color-white;
+			}
+		}			
+		
+	}	
+	// .st-helpTextWrap{
+	// 	position: relative;
+	// 	text-align: center;
+	// 	&:hover{
+	// 		.st-helpText{	
+	// 			opacity: 1;
+	// 		}
+	// 	}
+	// 	.st-helpText{
+	// 		position: absolute;
+	// 		bottom: -32px;
+	// 		left: 50%;
+	// 		width: 150px;
+	// 		margin-left: -76px;
+	// 		text-align: center;
+	// 		opacity: 0;
+	// 		display: inline-block;
+	// 		transition: all .4s;
+	// 	}
+	// }
+
+
+
 }
-.sHelper{
-	position: absolute;
-	bottom: -32px;
-	left: 50%;
-	width: 150px;
-	margin-left: -76px;
-	text-align: center;
-	opacity: 0;
-	display: inline-block;
-	transition: all .4s;
+@media (min-width: 768px){
+	.btn-moreWrap{
+		right: 56px !important;
+	}	
 }
+
 //디자인 과정
-.work-section{
-	left: 0px !important;
-}
-.work-img1{
-	transform-style: preserve-3d;transform: perspective(300px);
-}
 #pinContainer {
-	transition: all .4s;
 	width: 100% !important;
 	overflow: hidden;
 	perspective: 1000;
+	#slideContainer {
+		width: 300%; /* to contain 4 panels, each with 100% of window width */
+		height: 100%;
+		background-image: url(./../images/johcompany_BG.jpg);
+		.panel {
+			/* width: 25%; */
+			height: 100%;
+			float: left;
+			.process-image{
+				height: 50vh;
+			}	
+			.process-text{
+				margin-top: 36px;
+			}				
+		}
+	}	
+	.ef-btn-rotate{
+		a{
+			.text{
+				color: $color-ink;
+			}
+			svg{
+				rect{
+					fill: $color-ink;
+					stroke: $color-ink;
+				}
+			}
+
+		}
+		&:hover{
+			.text{
+				color: $color-white;
+			}
+		}			
+		
+	}	
+
 }
-#slideContainer {
-	width: 400%; /* to contain 4 panels, each with 100% of window width */
-	height: 100%;
+#other{
+	.ef-btn-rotate{
+		a{
+			.text{
+				color: $color-white;
+			}
+			svg{
+				rect{
+					fill: $color-white;
+					stroke: $color-white;
+				}
+			}
+		}
+		&:hover{
+			.text{
+				color: $color-indigo-500 !important;
+			}
+		}			
+	}
 }
-.panel {
-	/* width: 25%; */
-	height: 100%;
-	float: left;
-}
-.page-title{
-	transition: all .4s;
-}
+
 // 함께한 곳
 #career{
+	.fixed{
+		transition: all .3s;
+		// position: absolute;
+		top:$navBar-height;
+		bottom: auto;
+	}
+	.career-imgWrap{
+		position: sticky;
+		top:0px;
+		z-index: 70;
+		height: 100vh;
+	}
 	.career-img{
 		opacity: 0;
 		transition: all .1s ease-in-out;
+		object-fit: cover;
 	}
 	.absolute{
 		position: absolute;
@@ -1288,16 +1507,19 @@ a.eLink{
 		position: absolute;
 		left: 20px;
 		display: inline-block;
+		font-weight: bold;
+		font-size: 14px;
+		color: white;
 	} 
 	.career-scroll{
 		position: absolute;
-		left: -9px;
+		left: -7px;
 		display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: 16px;
+		height: 16px;
 		padding-right:8px;
 		background-color: white;
-		border:4px solid $color-indigo-600;
+		border:4px solid $color-indigo-500;
 		border-radius: 100%;
 	}
 	.career-scrollWrap{
@@ -1310,74 +1532,122 @@ a.eLink{
 		display: inline-block;
 	} 
 } 
-
-// 함께한 일
-.portfolio-con{
-	margin-top: 0rem;
-	padding-bottom: 4rem;
-	.portfolio-img{
+@media (min-width: 768px){
+	.career-imgWrap{
 		position: relative;
-		min-height: 50vh;
-		background-size: cover; 
-		background-position: center;
-		transition: all .2s;
-		.portfolio-title{
-			color: $color-white;
-		}
-		.portfolio-tag, .portfolio-desc{
-			display: none;
-		}
-		.bg-dim{
+	}
+}
+// 함께한 일
+.portfolio-grid{
+	display: grid;
+	// grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap: 120px 24px;
+	.portfolio-con{
+		position: relative;
+		padding-top: 211px;
+		overflow: hidden;
+		.portfolio-img{
 			position: absolute;
 			top: 0px;
-			left: 0px;
-			width: 100%;
-			height: 100%;
-			opacity:0;
-			transition: all 0.4s;
-			&::before{
-				content: '';
+			min-height: 211px;
+			.title, .tagWrap,.more{
+				overflow: hidden;	
+				position: relative;
+				z-index: 70;
+				.text{
+					position: absolute;
+					z-index: 70;
+					width: 100%;
+					top: 0px;
+					left: 0px;
+					opacity: 0;	
+					transform: translateY(100%); 
+				}
+
+			}			
+			.title{
+				height: 44px;
+			}
+			.tagWrap{
+				height: 24px;
+				.tag{
+					padding-right: 8px;
+					display: inline-block;
+				}			
+			}
+			.more{
+				opacity: 0;	
+				height: 40px;
+					.eLink{
+						&::before{
+							background-color: transparentize($color-white, .2);
+						}
+					}
+				}	
+			.bg{
 				position: absolute;
-				width: 100%;
-				height: 100%;
-				border-radius: 18px;
-				background-color: $color-white;	
+				top: 0px;
+				z-index: 1;
+				background-size: cover;
+				background-position: center; 
+				background-repeat: no-repeat;
+				&::before{
+					content: '';
+					position: absolute;
+					top: 0px;
+					left: 0px;
+					width: 100%;
+					height: 100%;
+					z-index: 60;
+					background-color: transparent;
+					transition: all .6s;
+				}
 			}
 		}
 		&:hover{
-			.bg-dim{
-				opacity: 1 !important;
+			.portfolio-img{
+				min-height: 100%;
+				.title,.tagWrap{
+					.text{
+						animation: no-transform linear .3s forwards;
+					}
+				}	
+				.more{
+					animation: no-transform linear .3s .9s forwards;
+				}
+				.title .text{
+					animation-delay: 0s;
+				}	
+				.tagWrap .text{
+					animation-delay: .3s;
+				}
+				.bg{
+					&::before{
+						background-color: transparentize($color-indigo-600, .2);
+					}
+				}
 			}
-			.portfolio-title{
-				color: $color-mark;
-
+			.portfolio-text{
+				opacity: 0;
 			}
-			.portfolio-desc{
-				display: block;
-				color: $color-mark;
-				
-			}
-			.portfolio-tag{
-				display: block;
-			}
-		}	
+		}
 	}	
 }
-
-
-@media (min-width: 768px){
-		.portfolio-con1{
-			margin-top: 40vh;
+@media (min-width: 992px){
+	#portfolio{
+		.sider{
+			height: 100vh !important;
+			position: sticky !important;	
+			padding-top: 8rem;		
 		}
-		.portfolio-con2{
-			margin-top: -10vh;
-		}
+
+	}
 }
-
 // 탑
-.btn-top{
+#btn-top{
 	position: fixed;
-	bottom: 2.5rem;
+	bottom: 3rem;
 	right:2rem;
 	height: 40px;
 	width: 40px;
@@ -1397,12 +1667,12 @@ a.eLink{
 			content: '';
 			display: inline-block;
 			position:absolute;
-			top: 3px;
+			top: 2px;
 			left: 0px;
 			width: 100%;
 			height: 100%;
-			border-left: 1px solid $color-mark;
-			border-top: 1px solid $color-mark;
+			border-left: 1px solid $color-indigo-500;
+			border-top: 1px solid $color-indigo-500;
 			transform: rotate(45deg);
 		}		
 	}
