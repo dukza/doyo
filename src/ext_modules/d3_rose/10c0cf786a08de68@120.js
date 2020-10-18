@@ -3,9 +3,9 @@ import define1 from "./e93997d5089d7165@2286.js";
 
 export default function define(runtime, observer) {
   const main = runtime.module();
-  main.variable(observer()).define(["md"], function(md){return(
-md`# Incremental Drift (Rose Equation)`
-)});
+//   main.variable(observer()).define(["md"], function(md){return(
+// md`# Incremental Drift (Rose Equation)`
+// )});
   main.variable(observer()).define(["DOM","width","height","speed","trail_length","nbr_dots","tm","rose_rad","dot_sat","dot_bri","dot_alpha","dot_rad"], function*(DOM,width,height,speed,trail_length,nbr_dots,tm,rose_rad,dot_sat,dot_bri,dot_alpha,dot_rad)
 {
   let dc,canvas;
