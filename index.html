@@ -19,6 +19,16 @@
         <script src="./src/tilt/tilt.jquery.js"></script>
         <!-- 레이아웃 제이쿼리 -->
         <script type="text/javascript" src="./src/js/common.js"></script>
+
+        <script type="module">
+
+            import define from "./src/ext_modules/d3_rose/index.js";
+            import {Runtime, Library, Inspector} from "./src/ext_modules/d3_rose/runtime.js";
+            
+            const runtime = new Runtime();
+            const main = runtime.module(define, Inspector.into(document.getElementById('d3rose')));
+            
+        </script>
     </head>
     <body>
         <div class="container-fluid" id="page">
@@ -65,6 +75,7 @@
                                                 <rect x="4" y="4" rx="0" ry="0"></rect>
                                             </svg>
                                         </a>
+                                        <div id ='d3rose' style='position:absolute;'></div>
                                 </div>                                         
                             </div>
                         </div>     
