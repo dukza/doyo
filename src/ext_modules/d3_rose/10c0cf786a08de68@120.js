@@ -13,7 +13,7 @@ export default function define(runtime, observer) {
   else { 
     dc = DOM.context2d(width, height);
     canvas = dc.canvas;
-    dc.fillStyle = '#000';
+    dc.fillStyle = 'white';
     dc.fillRect(0, 0, width, height);
   }
   let cx = width/2;

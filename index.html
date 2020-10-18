@@ -19,16 +19,6 @@
         <script src="./src/tilt/tilt.jquery.js"></script>
         <!-- 레이아웃 제이쿼리 -->
         <script type="text/javascript" src="./src/js/common.js"></script>
-
-        <script type="module">
-
-            import define from "./src/ext_modules/d3_rose/index.js";
-            import {Runtime, Library, Inspector} from "./src/ext_modules/d3_rose/runtime.js";
-            
-            const runtime = new Runtime();
-            const main = runtime.module(define, Inspector.into(document.getElementById('d3rose')));
-            
-        </script>
     </head>
     <body>
         <div class="container-fluid" id="page">
@@ -44,10 +34,10 @@
                 <div class="col-12" id="navBar">
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-10 mt-5 d-flex align-content-center">
-                            <a class="h5 link mr-4 js-link active bold" data-link="designIs" lang="en">Design is</a>
-                            <a class="h5 link mr-4 js-link bold" data-link="process" lang="en">Process</a>
-                            <a class="h5 link mr-4 js-link bold" data-link="career" lang="en">Career</a>
-                            <a class="h5 link js-link bold" data-link="portfolio" lang="en">Works</a>                            
+                            <a class="link mr-4 js-link active bold" data-link="designIs" lang="en">Design is</a>
+                            <a class="link mr-4 js-link bold" data-link="process" lang="en">Process</a>
+                            <a class="link mr-4 js-link bold" data-link="career" lang="en">Career</a>
+                            <a class="link js-link bold" data-link="portfolio" lang="en">Works</a>                            
                         </div>
                     </div>
 
@@ -58,7 +48,7 @@
                 <!-- //탑버튼 -->
                 <!-- 디자인 이란 -->
                 <div class="col-12 vh-100 bg-dark-ink page-title" id="designIs" data-name="designIs">          
-                    <div class="row h-100 position-relative align-items-center justify-content-center overflow-hidden carousel1">
+                    <div class="row h-100 positon-relative align-items-center justify-content-center carousel1">
                         <div class="col-12 col-md-10">
                             <div class="row ef-zoomText ef-btn-rotate">
                                 <div class="col-12 text-light bold mb-5 ef-fade ef-fade0" lang="en">
@@ -79,15 +69,19 @@
                                   
                             </div>
                         </div>  
-                        <div class="col-12 col-md-6 px-0 positon-absolute" style="top: 0px; right: 0px; left: 0px; z-index: -1;">
+                        <!-- <div class="col-12 positon-absolute" style="top: 0px; right: 0px; left: 0px; z-index: -1;">
                             <div class="w-100" id ='d3rose'>
-                        </div>   
+                        </div>    -->
+                        <!-- 배경 -->
+                        <div class="col-12 overflow-hidden positon-absolute" style="top: 0px; right: 0px; bottom: 0px;left: 0px; z-index: -1;">
+                            <div id ='d3rose' style="width: auto; height: auto;"></div>
+                        </div>
+                        <!-- 배경 -->
                         <div class="col-auto btn-moreWrap ef-fade ef-fade4">
                             <span class="js-link btn-more eDown" data-link="process"> 
                                 <span class="iDown"><span class="icon"></span></span>
                                 <div class="bold text" lang="en"></div>  
-                            </span> 
-                                    
+                            </span>     
                         </div>  
                         <!-- <div class="ef-fade ef-fade5 object" style="color: #49fe37; top:50px;">Affordance</div> 
                         <div class="ef-fade ef-fade5 object" style="color: #fbd032; top:120px; right: 100px;">
@@ -665,4 +659,12 @@
 </html>
 <script>
     commonInit('#page');
+    
 </script>
+<script type="module">
+    import define from "./src/ext_modules/d3_rose/index.js";
+    import {Runtime, Library, Inspector} from "./src/ext_modules/d3_rose/runtime.js";
+    
+    const runtime = new Runtime();
+    const main = runtime.module(define, Inspector.into(document.getElementById('d3rose')));
+</script> 
