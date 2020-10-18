@@ -1288,12 +1288,13 @@ a.eLink:hover::before {
 }
 
 .ef-btn-rotate a svg rect {
-  width: 242px;
-  height: 48px;
+  width: 252px;
+  height: 56px;
   fill-opacity: 0;
   stroke-width: 4;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 40;
   -webkit-transform-origin: center;
           transform-origin: center;
   -webkit-transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s, fill-opacity 0.5s 0.2s;
